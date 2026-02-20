@@ -29,11 +29,36 @@ interface Session {
 
 const day1Sessions: Session[] = [
   {
-    time: "Dia inteiro",
-    title: "Action Labs",
+    time: "09:00",
+    title: "Action Lab 1 - Investigação Clínica",
     description:
-      "Sessões práticas de co-criação e trabalho colaborativo sobre temas de inovação em saúde.",
+      "Workshop prático com foco em investigação clínica aplicada ao contexto hospitalar e territorial.",
     type: "workshop",
+    duration: "90 min",
+  },
+  {
+    time: "11:00",
+    title: "Action Lab 2 - Inteligência Artificial na prática",
+    description:
+      "Capacitação para uso de ferramentas de IA com abordagem pragmática para profissionais de saúde.",
+    type: "workshop",
+    duration: "90 min",
+  },
+  {
+    time: "14:00",
+    title: "Action Lab 3 - Design Thinking em Saúde",
+    description:
+      "Dinâmicas colaborativas para desenho de soluções e melhoria contínua de processos clínicos.",
+    type: "workshop",
+    duration: "90 min",
+  },
+  {
+    time: "16:00",
+    title: "Action Lab 4 - Técnicas diferenciadas de apoio clínico",
+    description:
+      "Sessão prática: luz azul, laser e eco em contexto de apoio clínico.",
+    type: "workshop",
+    duration: "90 min",
   },
 ];
 
@@ -70,7 +95,7 @@ const day2Sessions: Session[] = [
   {
     time: "11:00",
     title: "Telessaúde — Caso de Estudo",
-    description: "Aplicação prática de soluções de telessaúde",
+    description: "Aplicação prática de soluções de telessaúde (convite em curso)",
     type: "case",
     duration: "20 min",
   },
@@ -84,7 +109,7 @@ const day2Sessions: Session[] = [
   {
     time: "11:40",
     title: "Telemonitorização — Caso de Estudo",
-    description: "Monitorização remota de doentes",
+    description: "Monitorização remota de doentes (convite em curso)",
     type: "case",
     duration: "20 min",
   },
@@ -106,7 +131,7 @@ const day2Sessions: Session[] = [
   {
     time: "14:00",
     title: "Liderança e Comunicação Organizacional",
-    speaker: "Claudia Telles de Freitas",
+    speaker: "Cláudia Telles de Freitas (ou convidado a confirmar)",
     description: "Sessão durante o almoço",
     type: "keynote",
     duration: "30 min",
@@ -121,7 +146,8 @@ const day2Sessions: Session[] = [
   {
     time: "15:00",
     title: "Estratégias de Inovação Digital em Saúde em Territórios de Baixa Densidade",
-    description: "Centro de Inovação e IA em Saúde do Alentejo",
+    description:
+      "Caso de estudo (HOPECARE e/ou Centro de Inovação e IA em Saúde do Alentejo - convite em curso)",
     type: "case",
     duration: "30 min",
   },
@@ -137,7 +163,7 @@ const day2Sessions: Session[] = [
     title:
       "A Inovação como Trigger da Investigação Clínica",
     speaker:
-      "Secretária de Estado Helena Canhão + Champalimaud/AIBILI + ULS Sao Jose",
+      "Secretária de Estado Helena Canhão + Champalimaud/AIBILI + ULS São José",
     description: "Painel de debate — Moderação: Érica Cardoso",
     type: "panel",
     duration: "60 min",
@@ -146,8 +172,8 @@ const day2Sessions: Session[] = [
     time: "17:00",
     title: "O Papel de Cada Um no Ecossistema de Inovação",
     speaker:
-      "Manuel Dias (CTO ARTE), Jose Paulo (CEO HOPECARE), Luis Loures (IPP), Miguel Lopes (ULS AA), Sofia Couto da Rocha (Lusiadas Saúde), SPMS",
-    description: "Painel final",
+      "Manuel Dias (ARTE), José Paulo (HOPECARE), Luís Loures (IPP), Miguel Lopes (ULS AA), Sofia Couto da Rocha (Lusíadas Saúde), SPMS e convidados",
+    description: "Painel final - moderação a confirmar",
     type: "panel",
     duration: "60 min",
   },
@@ -323,6 +349,9 @@ export function ProgramaSection() {
             Dos Action Labs ao Summit, com oradores de referência nacional e
             internacional.
           </p>
+          <p className="text-xs text-muted-foreground mt-3">
+            Draft em atualização contínua. Sessões e convidados sujeitos a confirmação.
+          </p>
         </div>
 
         {/* Day tabs + Actions */}
@@ -337,7 +366,7 @@ export function ProgramaSection() {
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              <span className="hidden sm:inline">Domingo, </span>20 Abril —
+              <span className="hidden sm:inline">Segunda, </span>20 Abril —
               Action Labs
             </button>
             <button
@@ -393,8 +422,8 @@ export function ProgramaSection() {
                   </h4>
                   <p className="text-xs text-muted-foreground">
                     {activeDay === 1
-                      ? "20 Abril 2026 — Sessões práticas"
-                      : "21 Abril 2026 — Museu de Ciência do Café, Campo Maior"}
+                      ? "20 Abril 2026 — Centro de Inteligência Competitiva, Campo Maior"
+                      : "21 Abril 2026 — Campo Maior (Museu de Ciência do Café* / Centro Cultural confirmado)"}
                   </p>
                 </div>
               </div>
@@ -438,19 +467,29 @@ export function ProgramaSection() {
           {/* Sessions */}
           <div className="lg:col-span-3 order-1 lg:order-2">
             {activeDay === 1 ? (
-              <div className="bg-card border border-border rounded-2xl p-8 text-center">
-                <div className="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-8 h-8 text-blue-500" />
+              <div>
+                <div className="bg-card border border-border rounded-2xl p-6 mb-3">
+                  <div className="flex items-start gap-3">
+                    <div className="w-11 h-11 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
+                      <Users className="w-5 h-5 text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-foreground text-lg">Action Labs - 20 Abril</h3>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        Workshops práticos com dinâmicas de grupo para capacitação em inovação, investigação
+                        e melhoria contínua.
+                      </p>
+                      <p className="text-xs text-muted-foreground mt-2">
+                        Local confirmado: Centro de Inteligência Competitiva, Campo Maior.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl text-foreground mb-3">Action Labs</h3>
-                <p className="text-muted-foreground max-w-md mx-auto mb-4">
-                  Sessões práticas de co-criação e trabalho colaborativo sobre
-                  temas de inovação em saúde. Programa detalhado a anunciar em
-                  breve.
-                </p>
-                <p className="text-sm text-primary">
-                  Domingo, 20 de Abril de 2026
-                </p>
+                <div className="space-y-2">
+                  {sessions.map((session, index) => (
+                    <SessionCard key={index} session={session} />
+                  ))}
+                </div>
               </div>
             ) : (
               <div className="space-y-2">

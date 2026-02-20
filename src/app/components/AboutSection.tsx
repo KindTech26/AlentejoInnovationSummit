@@ -80,7 +80,7 @@ export function AboutSection() {
                         Campo Maior, Alto Alentejo
                       </p>
                       <p className="text-[11px] text-muted-foreground/70 mt-1">
-                        Alternativa: Centro Cultural de Campo Maior (confirmado)
+                        *Alternativa confirmada: Centro Cultural de Campo Maior
                       </p>
                     </div>
                   </div>
@@ -151,14 +151,21 @@ export function AboutSection() {
               <p>
                 No primeiro dia, os{" "}
                 <strong className="text-foreground">Action Labs</strong>{" "}
-                proporcionam sessões práticas de cocriação. No segundo dia, o{" "}
+                são workshops práticos com dinâmicas de grupo para capacitação
+                de profissionais de saúde em melhoria contínua, investigação e
+                inovação. No segundo dia, o{" "}
                 <strong className="text-foreground">Summit</strong> reúne
                 oradores de referência nacional para conferências, painéis de
                 debate e casos de estudo — da telessaúde a cirurgia robótica, da
                 inovação digital a investigação clínica.
               </p>
               <p>
-                Com a presença confirmada da{" "}
+                O programa encontra-se em versão draft, com vários convites em
+                curso para keynotes, painéis e casos de estudo. A agenda será
+                atualizada à medida que as confirmações forem fechadas.
+              </p>
+              <p>
+                Com presença institucional prevista da{" "}
                 <strong className="text-foreground">
                   Ministra da Saúde
                 </strong>
@@ -172,6 +179,21 @@ export function AboutSection() {
               </p>
             </div>
 
+            <div className="mt-6 p-5 bg-card border border-border rounded-xl">
+              <p className="text-xs text-muted-foreground uppercase tracking-wider mb-3">
+                Action Labs (Dia 20) - 4 eixos práticos
+              </p>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>Investigação clínica</li>
+                <li>Inteligência artificial</li>
+                <li>Design thinking</li>
+                <li>Técnicas diferenciadas de apoio clínico (luz azul, laser e eco)</li>
+              </ul>
+              <p className="text-xs text-muted-foreground mt-3">
+                Local confirmado para Action Labs: Centro de Inteligência Competitiva, Campo Maior.
+              </p>
+            </div>
+
             {/* Organization */}
             <div className="mt-8 p-5 bg-accent/40 border border-primary/10 rounded-xl">
               <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">
@@ -181,7 +203,8 @@ export function AboutSection() {
                 ULS do Alto Alentejo
               </p>
               <p className="text-xs text-muted-foreground mt-1">
-                Com o apoio institucional de parceiros regionais e nacionais
+                Parceiros iniciais: CM Campo Maior, Centro de Inteligência
+                Competitiva do Alentejo e Instituto Politécnico de Portalegre.
               </p>
             </div>
           </div>
@@ -201,6 +224,20 @@ export function AboutSection() {
               <p className="text-muted-foreground text-sm">{pillar.desc}</p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-8 bg-card border border-border rounded-2xl p-6">
+          <p className="text-xs text-muted-foreground uppercase tracking-[0.14em] mb-3">
+            Kit de comunicação (em produção)
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2 text-sm text-muted-foreground">
+            <p>Banner do microsite</p>
+            <p>Imagem para redes sociais</p>
+            <p>Imagem/cartaz do evento</p>
+            <p>Programa em PDF</p>
+            <p>Layout para cartões e fitas lanyard</p>
+            <p>Template de apresentações (PowerPoint)</p>
+          </div>
         </div>
       </div>
     </section>

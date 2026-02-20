@@ -117,8 +117,10 @@ export function HeroSection() {
           Inovação, Saúde e Território
         </p>
         <p className="text-sm text-white/50 max-w-xl mx-auto mb-10">
-          Museu de Ciência do Café &middot; Campo Maior &middot; Alto Alentejo,
-          Portugal
+          Campo Maior &middot; Alto Alentejo, Portugal
+          <br />
+          Museu de Ciência do Café* | alternativa confirmada: Centro Cultural de
+          Campo Maior
         </p>
 
         {/* CTA Buttons */}
@@ -221,9 +223,9 @@ export function HeroSection() {
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-8 text-xs text-white/40">
           <span>Action Labs &middot; 20 Abril</span>
           <span className="hidden sm:inline">|</span>
-          <span>Summit &middot; 21 Abril</span>
+          <span>Summit (terça-feira) &middot; 21 Abril</span>
           <span className="hidden sm:inline">|</span>
-          <span>Networking &middot; Cocktail</span>
+          <span>Programa draft &middot; convites em curso</span>
         </div>
       </div>
 
