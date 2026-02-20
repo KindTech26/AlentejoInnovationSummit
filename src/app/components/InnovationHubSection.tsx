@@ -1,8 +1,7 @@
-import { Rocket, Cpu, Stethoscope, Wifi, ArrowRight, Brain, FlaskConical } from "lucide-react";
+import { Cpu, Stethoscope, Wifi, Brain, FlaskConical, Rocket } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
-const hubImage =
-  "https://images.unsplash.com/photo-1659353887019-b142198f2668?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwaGVhbHRoJTIwc3RldGhvc2NvcGUlMjB0ZWNobm9sb2d5JTIwY2xlYW58ZW58MXx8fHwxNzcxNjAwNjQ4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+import hubImage from "../../../assets/hub.png";
 
 const hubFeatures = [
   {
@@ -95,31 +94,6 @@ export function InnovationHubSection() {
                 />
               </div>
 
-              <div className="bg-accent/40 border border-primary/10 rounded-xl p-5">
-                <p className="text-sm text-foreground mb-2">
-                  Quer participar no Innovation Hub?
-                </p>
-                <p className="text-xs text-muted-foreground mb-4">
-                  Se tem um projeto, startup ou solução inovadora na área da
-                  saúde, submeta a sua candidatura para expositor ou apresentador
-                  no Innovation Hub do AAHIS.
-                </p>
-                <a
-                  href="mailto:info@aahis.pt?subject=Innovation Hub - Candidatura"
-                  className="inline-flex items-center gap-2 text-primary text-sm hover:underline cursor-pointer"
-                >
-                  Submeter candidatura
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </div>
-
-              {/* Coming soon */}
-              <div className="text-center">
-                <div className="inline-flex items-center gap-2 bg-secondary rounded-full px-5 py-2 text-xs text-secondary-foreground">
-                  <Rocket className="w-3.5 h-3.5" />
-                  Mais informações em breve
-                </div>
-              </div>
             </div>
           </div>
         </div>

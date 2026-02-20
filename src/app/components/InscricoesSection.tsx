@@ -6,7 +6,6 @@ import {
   CalendarCheck,
   MapPin,
   Users,
-  AlertCircle,
 } from "lucide-react";
 
 type Profile = {
@@ -225,18 +224,6 @@ function RegistrationSection() {
           </div>
         </div>
 
-        <div className="flex items-start gap-3 bg-accent/40 border border-primary/10 rounded-xl p-5 max-w-2xl mx-auto">
-          <AlertCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-          <div>
-            <p className="text-sm text-foreground">Informação Importante</p>
-            <p className="text-xs text-muted-foreground mt-1.5">
-              O formulário de inscrição detalhado será disponibilizado em breve.
-              As inscrições estão sujeitas a confirmação pela organização. Após o
-              preenchimento receberá um email de confirmação com todos os
-              detalhes logísticos.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );

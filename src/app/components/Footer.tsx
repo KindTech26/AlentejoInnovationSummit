@@ -1,5 +1,6 @@
-import { Activity, Mail, MapPin, Facebook, Linkedin } from "lucide-react";
+import { Mail, MapPin, Facebook, Linkedin } from "lucide-react";
 import kindtechLogo from "../../../assets/kindtech.png";
+import tituloEventoBranco from "../../../assets/tituloeventobranco.png";
 
 const navLinks = [
   { id: "sobre", label: "O Evento" },
@@ -21,18 +22,12 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-                <Activity className="w-5 h-5 text-primary-foreground" />
-              </div>
-              <div>
-                <span className="text-sm tracking-wide block">
-                  Alto Alentejo
-                </span>
-                <span className="text-xs tracking-widest uppercase text-white/50">
-                  Health Innovation Summit
-                </span>
-              </div>
+            <div className="mb-5">
+              <img
+                src={tituloEventoBranco}
+                alt="Alto Alentejo Health Innovation Summit"
+                className="h-10 w-auto opacity-50"
+              />
             </div>
             <p className="text-sm text-white/50 max-w-sm mb-6">
               Inovação, Saúde e Território | 20 e 21 de Abril de 2026, Campo

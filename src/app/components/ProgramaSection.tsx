@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { jsPDF } from "jspdf";
 import {
   Download,
   Share2,
@@ -341,7 +342,203 @@ export function ProgramaSection() {
   const [activeDay, setActiveDay] = useState<1 | 2>(2);
 
   const handleDownload = () => {
-    alert("O programa em PDF estará disponível para download em breve.");
+    const doc = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" });
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const pageHeight = doc.internal.pageSize.getHeight();
+    const margin = 20;
+    const contentWidth = pageWidth - margin * 2;
+    let y = 0;
+
+    // --- Header background ---
+    doc.setFillColor(14, 124, 107); // primary #0e7c6b
+    doc.rect(0, 0, pageWidth, 52, "F");
+
+    // Title
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(22);
+    doc.setFont("helvetica", "bold");
+    doc.text("Alto Alentejo", pageWidth / 2, 18, { align: "center" });
+    doc.text("Health Innovation Summit", pageWidth / 2, 28, { align: "center" });
+
+    // Subtitle
+    doc.setFontSize(11);
+    doc.setFont("helvetica", "normal");
+    doc.text("20-21 Abril 2026  |  Museu de Ciencia do Cafe, Campo Maior", pageWidth / 2, 38, { align: "center" });
+
+    doc.setFontSize(9);
+    doc.setTextColor(200, 240, 230);
+    doc.text("Programa Completo", pageWidth / 2, 46, { align: "center" });
+
+    y = 62;
+
+    // --- Helper functions ---
+    const getTypeLabel = (type: SessionType) => {
+      switch (type) {
+        case "keynote": return "Conferencia";
+        case "panel": return "Painel";
+        case "case": return "Caso de Estudo";
+        case "workshop": return "Workshop";
+        case "institutional": return "Institucional";
+        case "break": return "Pausa";
+        case "closing": return "Encerramento";
+      }
+    };
+
+    const getTypeColor = (type: SessionType, isDay1: boolean): [number, number, number] => {
+      if (isDay1) {
+        // Blue palette for Day 1
+        switch (type) {
+          case "workshop": return [37, 99, 235];
+          case "break": return [156, 163, 175];
+          default: return [37, 99, 235];
+        }
+      }
+      switch (type) {
+        case "keynote": return [14, 124, 107];
+        case "panel": return [124, 58, 237];
+        case "case": return [217, 119, 6];
+        case "institutional": return [100, 116, 139];
+        case "break": return [156, 163, 175];
+        case "closing": return [14, 124, 107];
+        default: return [100, 116, 139];
+      }
+    };
+
+    const renderSessions = (sessions: Session[], isDay1: boolean) => {
+      for (const session of sessions) {
+        const estimatedHeight = 14 + (session.speaker ? 5 : 0) + (session.description ? 5 : 0) + (session.bullets ? session.bullets.length * 5 : 0);
+        if (y + estimatedHeight > pageHeight - 20) {
+          doc.addPage();
+          y = 20;
+        }
+
+        const typeColor = getTypeColor(session.type, isDay1);
+
+        // Time pill
+        doc.setFillColor(245, 247, 249);
+        doc.roundedRect(margin, y, 16, 7, 1, 1, "F");
+        doc.setFontSize(9);
+        doc.setFont("helvetica", "bold");
+        doc.setTextColor(80, 80, 80);
+        doc.text(session.time, margin + 8, y + 5, { align: "center" });
+
+        // Type badge
+        doc.setFillColor(typeColor[0], typeColor[1], typeColor[2]);
+        doc.roundedRect(margin + 18, y, 2, 7, 0.5, 0.5, "F");
+
+        // Title
+        doc.setFontSize(10);
+        doc.setFont("helvetica", "bold");
+        doc.setTextColor(26, 35, 50);
+        const titleLines = doc.splitTextToSize(session.title, contentWidth - 28);
+        doc.text(titleLines, margin + 24, y + 5);
+
+        // Type label on the right
+        doc.setFontSize(7);
+        doc.setFont("helvetica", "normal");
+        doc.setTextColor(typeColor[0], typeColor[1], typeColor[2]);
+        doc.text(getTypeLabel(session.type), pageWidth - margin, y + 5, { align: "right" });
+
+        y += 6 + (titleLines.length - 1) * 4;
+
+        // Speaker
+        if (session.speaker) {
+          y += 4;
+          doc.setFontSize(8.5);
+          doc.setFont("helvetica", "italic");
+          doc.setTextColor(isDay1 ? 37 : 14, isDay1 ? 99 : 124, isDay1 ? 235 : 107);
+          const speakerLines = doc.splitTextToSize(session.speaker, contentWidth - 28);
+          doc.text(speakerLines, margin + 24, y);
+          y += (speakerLines.length - 1) * 3.5;
+        }
+
+        // Description
+        if (session.description) {
+          y += 4;
+          doc.setFontSize(8);
+          doc.setFont("helvetica", "normal");
+          doc.setTextColor(100, 110, 120);
+          const descLines = doc.splitTextToSize(session.description, contentWidth - 28);
+          doc.text(descLines, margin + 24, y);
+          y += (descLines.length - 1) * 3.5;
+        }
+
+        // Bullets
+        if (session.bullets) {
+          for (const bullet of session.bullets) {
+            y += 4;
+            if (y > pageHeight - 20) {
+              doc.addPage();
+              y = 20;
+            }
+            doc.setFontSize(7.5);
+            doc.setFont("helvetica", "normal");
+            doc.setTextColor(100, 110, 120);
+            doc.setFillColor(typeColor[0], typeColor[1], typeColor[2]);
+            doc.circle(margin + 26, y - 1, 0.8, "F");
+            doc.text(bullet, margin + 29, y);
+          }
+        }
+
+        // Separator line
+        y += 7;
+        doc.setDrawColor(230, 230, 230);
+        doc.setLineWidth(0.2);
+        doc.line(margin, y, pageWidth - margin, y);
+        y += 5;
+      }
+    };
+
+    // ===== DAY 1 - Action Labs (Blue) =====
+    doc.setFillColor(37, 99, 235); // blue
+    doc.roundedRect(margin, y, contentWidth, 10, 2, 2, "F");
+    doc.setFontSize(11);
+    doc.setFont("helvetica", "bold");
+    doc.setTextColor(255, 255, 255);
+    doc.text("Dia 1  -  Domingo, 20 Abril  |  Action Labs", pageWidth / 2, y + 7, { align: "center" });
+    y += 18;
+
+    renderSessions(day1Sessions, true);
+
+    // ===== DAY 2 - Summit (Green) =====
+    // New page for Day 2
+    doc.addPage();
+    y = 20;
+
+    doc.setFillColor(14, 124, 107); // green
+    doc.roundedRect(margin, y, contentWidth, 10, 2, 2, "F");
+    doc.setFontSize(11);
+    doc.setFont("helvetica", "bold");
+    doc.setTextColor(255, 255, 255);
+    doc.text("Dia 2  -  Segunda, 21 Abril  |  Summit", pageWidth / 2, y + 7, { align: "center" });
+    y += 18;
+
+    renderSessions(day2Sessions, false);
+
+    // Footer note
+    if (y + 15 > pageHeight) {
+      doc.addPage();
+      y = 20;
+    }
+    y += 5;
+    doc.setFontSize(7.5);
+    doc.setFont("helvetica", "italic");
+    doc.setTextColor(150, 150, 150);
+    doc.text("* Programa provisorio, sujeito a alteracoes e confirmacoes finais.", pageWidth / 2, y, { align: "center" });
+
+    // Bottom bar on all pages
+    const totalPages = doc.getNumberOfPages();
+    for (let i = 1; i <= totalPages; i++) {
+      doc.setPage(i);
+      doc.setFillColor(14, 124, 107);
+      doc.rect(0, pageHeight - 10, pageWidth, 10, "F");
+      doc.setFontSize(7);
+      doc.setFont("helvetica", "normal");
+      doc.setTextColor(255, 255, 255);
+      doc.text("Alto Alentejo Health Innovation Summit 2026  |  Campo Maior, Portugal", pageWidth / 2, pageHeight - 4, { align: "center" });
+    }
+
+    doc.save("Programa_AAHIS_2026.pdf");
   };
 
   const handleShare = () => {

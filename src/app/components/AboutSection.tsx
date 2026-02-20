@@ -5,7 +5,6 @@ import {
   Heart,
   MapPin,
   Calendar,
-  Clock,
   Building,
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
@@ -56,7 +55,7 @@ export function AboutSection() {
         </div>
 
         {/* Two column: image + concept */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-20">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-10">
           {/* Image + venue card */}
           <div>
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] mb-6">
@@ -78,9 +77,6 @@ export function AboutSection() {
                       </p>
                       <p className="text-xs text-muted-foreground mt-0.5">
                         Campo Maior, Alto Alentejo
-                      </p>
-                      <p className="text-[11px] text-muted-foreground/70 mt-1">
-                        *Alternativa confirmada: Centro Cultural de Campo Maior
                       </p>
                     </div>
                   </div>
@@ -110,25 +106,8 @@ export function AboutSection() {
                   <span className="text-sm text-foreground">Campo Maior</span>
                 </div>
               </div>
-              <div className="flex items-center gap-3 bg-secondary rounded-xl px-4 py-3.5">
-                <Clock className="w-5 h-5 text-primary flex-shrink-0" />
-                <div>
-                  <span className="text-[11px] text-muted-foreground block uppercase tracking-wider">
-                    Duração
-                  </span>
-                  <span className="text-sm text-foreground">2 Dias</span>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 bg-secondary rounded-xl px-4 py-3.5">
-                <Users className="w-5 h-5 text-primary flex-shrink-0" />
-                <div>
-                  <span className="text-[11px] text-muted-foreground block uppercase tracking-wider">
-                    Formato
-                  </span>
-                  <span className="text-sm text-foreground">Presencial</span>
-                </div>
-              </div>
             </div>
+
           </div>
 
           {/* Concept note */}
@@ -136,77 +115,25 @@ export function AboutSection() {
             <h3 className="text-2xl text-foreground mb-6">Nota de Conceito</h3>
             <div className="space-y-4 text-muted-foreground text-[15px]">
               <p>
-                O <strong className="text-foreground">Alto Alentejo Health Innovation Summit</strong> nasce
-                da necessidade de repensar a saúde nos territórios de baixa
-                densidade, trazendo inovação, tecnologia e novas abordagens para
-                enfrentar os desafios demográficos e de acesso aos cuidados de
-                saúde.
+                O <strong className="text-foreground">Alto Alentejo Health Innovation Summit</strong> surge da necessidade de repensar a prestação de cuidados de saúde em territórios de baixa densidade, integrando inovação, tecnologia e novas abordagens para responder aos desafios demográficos e de acesso.
               </p>
               <p>
-                Este evento pretende ser um ponto de encontro entre quem pensa,
-                quem faz e quem decide na área da saúde  - promovendo a discussão
-                de soluções concretas e adaptadas a realidade do interior de
-                Portugal.
+                A iniciativa constitui um espaço de articulação entre decisores, profissionais e especialistas da área da saúde, promovendo a discussão de soluções concretas e ajustadas à realidade do interior de Portugal.
               </p>
               <p>
                 No primeiro dia, os{" "}
                 <strong className="text-foreground">Action Labs</strong>{" "}
-                são workshops práticos com dinâmicas de grupo para capacitação
-                de profissionais de saúde em melhoria contínua, investigação e
-                inovação. No segundo dia, o{" "}
-                <strong className="text-foreground">Summit</strong> reúne
-                oradores de referência nacional para conferências, painéis de
-                debate e casos de estudo  - da telessaúde a cirurgia robótica, da
-                inovação digital a investigação clínica.
+                proporcionam sessões práticas de capacitação e cocriação. No segundo dia, o{" "}
+                <strong className="text-foreground">Summit</strong> reúne oradores de referência nacional para conferências, painéis e apresentação de casos de estudo: da telessaúde à cirurgia robótica, da inovação digital à investigação clínica.
               </p>
               <p>
-                O programa encontra-se em versão draft, com vários convites em
-                curso para keynotes, painéis e casos de estudo. A agenda será
-                atualizada à medida que as confirmações forem fechadas.
-              </p>
-              <p>
-                Com presença institucional prevista da{" "}
-                <strong className="text-foreground">
-                  Ministra da Saúde
-                </strong>
-                , do{" "}
-                <strong className="text-foreground">
-                  Prof. Henrique Martins (ISCTE)
-                </strong>{" "}
-                e de líderes do ecossistema de inovação em saúde, o Summit
-                posiciona-se como um momento chave para o futuro da saúde no
-                Alentejo e em Portugal.
+                Com a presença confirmada da{" "}
+                <strong className="text-foreground">Ministra da Saúde</strong>, do{" "}
+                <strong className="text-foreground">Prof. Henrique Martins (ISCTE)</strong>{" "}
+                e de outros representantes do ecossistema de inovação em saúde, o Summit afirma-se como um momento estratégico para o futuro da saúde no Alentejo e em Portugal.
               </p>
             </div>
 
-            <div className="mt-6 p-5 bg-card border border-border rounded-xl">
-              <p className="text-xs text-muted-foreground uppercase tracking-wider mb-3">
-                Action Labs (Dia 20) - 4 eixos práticos
-              </p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>Investigação clínica</li>
-                <li>Inteligência artificial</li>
-                <li>Design thinking</li>
-                <li>Técnicas diferenciadas de apoio clínico (luz azul, laser e eco)</li>
-              </ul>
-              <p className="text-xs text-muted-foreground mt-3">
-                Local confirmado para Action Labs: Centro de Inteligência Competitiva, Campo Maior.
-              </p>
-            </div>
-
-            {/* Organization */}
-            <div className="mt-8 p-5 bg-accent/40 border border-primary/10 rounded-xl">
-              <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">
-                Organização
-              </p>
-              <p className="text-sm text-foreground">
-                ULS do Alto Alentejo
-              </p>
-              <p className="text-xs text-muted-foreground mt-1">
-                Parceiros iniciais: CM Campo Maior, Centro de Inteligência
-                Competitiva do Alentejo e Instituto Politécnico de Portalegre.
-              </p>
-            </div>
           </div>
         </div>
 
@@ -215,30 +142,17 @@ export function AboutSection() {
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
-              className="group bg-card border border-border rounded-2xl p-6 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
+              className="group bg-card border border-border rounded-2xl p-5 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
             >
-              <div className="w-11 h-11 rounded-xl bg-secondary flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors">
+              <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center mb-3 group-hover:bg-primary/10 transition-colors">
                 <pillar.icon className="w-5 h-5 text-primary" />
               </div>
-              <h4 className="text-foreground mb-2">{pillar.title}</h4>
-              <p className="text-muted-foreground text-sm">{pillar.desc}</p>
+              <h4 className="text-foreground mb-1.5 text-sm">{pillar.title}</h4>
+              <p className="text-muted-foreground text-xs">{pillar.desc}</p>
             </div>
           ))}
         </div>
 
-        <div className="mt-8 bg-card border border-border rounded-2xl p-6">
-          <p className="text-xs text-muted-foreground uppercase tracking-[0.14em] mb-3">
-            Kit de comunicação (em produção)
-          </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2 text-sm text-muted-foreground">
-            <p>Banner do microsite</p>
-            <p>Imagem para redes sociais</p>
-            <p>Imagem/cartaz do evento</p>
-            <p>Programa em PDF</p>
-            <p>Layout para cartões e fitas lanyard</p>
-            <p>Template de apresentações (PowerPoint)</p>
-          </div>
-        </div>
       </div>
     </section>
   );

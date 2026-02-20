@@ -2,6 +2,25 @@ type PartnerLogo = {
   alt: string;
   name: string;
   src: string;
+  url?: string;
+};
+
+const partnerUrls: Record<string, string> = {
+  "1668509294155 rgb iscte pt vertical positive proxy": "https://www.iscte-iul.pt/",
+  "aibili logo": "https://www.aibili.pt/",
+  "arte gov pt logo": "https://www.arte.gov.pt/",
+  "Champalimaud Foundation 1": "https://fchampalimaud.org/",
+  "ciiasm logo": "https://www.ciiasm.pt/",
+  "images 1": "https://www.ccdr-a.gov.pt/" ,
+  "images 2": "https://www.spms.min-saude.pt/",
+  "images 3": "https://www.ulssjose.min-saude.pt/" ,
+  "images": "https://www.cm-campo-maior.pt/" ,
+  "kindtech": "https://kindtech.pt/",
+  "logo lusiadas": "https://www.lusiadas.pt/",
+  "logo Hope Care": "https://hope-care.pt/",
+  "pportalegreversao principal 01": "https://www.ipportalegre.pt/",
+  "psy": "https://psydevplaceholder.pages.dev",
+  "ulsnaale logo": "https://www.ulsaale.min-saude.pt/",
 };
 
 const partnersFromAssets = Object.entries(
@@ -26,15 +45,10 @@ const partnerLogos: PartnerLogo[] = partnersFromAssets
       name,
       src,
       alt: `Logótipo do parceiro ${name}`,
+      url: partnerUrls[name],
     };
   })
   .sort((a, b) => a.name.localeCompare(b.name, "pt"));
-
-const initialPartners = [
-  "Câmara Municipal de Campo Maior",
-  "Centro de Inteligência Competitiva do Alentejo",
-  "Instituto Politécnico de Portalegre",
-];
 
 export function ParceirosSection() {
   return (
@@ -55,43 +69,31 @@ export function ParceirosSection() {
           </p>
         </div>
 
-        <div className="mt-8 rounded-2xl border border-primary/15 bg-white/85 p-5">
-          <p className="text-xs uppercase tracking-[0.14em] text-muted-foreground mb-3">
-            Parceiros já confirmados nesta fase
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {initialPartners.map((partner) => (
-              <span
-                key={partner}
-                className="inline-flex items-center rounded-full border border-border bg-background px-3 py-1.5 text-xs text-foreground"
-              >
-                {partner}
-              </span>
-            ))}
-          </div>
-          <p className="text-xs text-muted-foreground mt-3">
-            Logótipos em atualização contínua.
-          </p>
-        </div>
-
         <div className="mt-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-5 md:gap-6">
-          {partnerLogos.map((partner) => (
-            <article
-              key={partner.src}
-              className="group transition-all duration-300 ease-in-out hover:scale-105"
-            >
-              <div className="rounded-2xl bg-white p-0.5 shadow-[0_8px_24px_rgba(15,23,42,0.08)] transition-all duration-300 ease-in-out group-hover:shadow-[0_16px_35px_rgba(15,23,42,0.16)]">
-                <div className="[clip-path:polygon(25%_0%,75%_0%,100%_50%,75%_100%,25%_100%,0%_50%)] bg-white px-5 py-8 sm:px-6 sm:py-10 min-h-[140px] flex items-center justify-center">
-                  <img
-                    src={partner.src}
-                    alt={partner.alt}
-                    loading="lazy"
-                    className="h-16 w-full object-contain sm:h-20"
-                  />
+          {partnerLogos.map((partner) => {
+            const Wrapper = partner.url ? "a" : "div";
+            const linkProps = partner.url
+              ? { href: partner.url, target: "_blank" as const, rel: "noopener noreferrer" }
+              : {};
+            return (
+              <Wrapper
+                key={partner.src}
+                {...linkProps}
+                className="group transition-all duration-300 ease-in-out hover:scale-105 block"
+              >
+                <div className="rounded-2xl bg-white p-0.5 shadow-[0_8px_24px_rgba(15,23,42,0.08)] transition-all duration-300 ease-in-out group-hover:shadow-[0_16px_35px_rgba(15,23,42,0.16)]">
+                  <div className="[clip-path:polygon(25%_0%,75%_0%,100%_50%,75%_100%,25%_100%,0%_50%)] bg-white px-5 py-8 sm:px-6 sm:py-10 min-h-[140px] flex items-center justify-center">
+                    <img
+                      src={partner.src}
+                      alt={partner.alt}
+                      loading="lazy"
+                      className="h-16 w-full object-contain sm:h-20"
+                    />
+                  </div>
                 </div>
-              </div>
-            </article>
-          ))}
+              </Wrapper>
+            );
+          })}
         </div>
       </div>
     </section>
