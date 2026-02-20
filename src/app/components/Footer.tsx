@@ -35,7 +35,7 @@ export function Footer() {
               </div>
             </div>
             <p className="text-sm text-white/50 max-w-sm mb-6">
-              Inovação, Saúde e Território — 20 e 21 de Abril de 2026, Campo
+              Inovação, Saúde e Território | 20 e 21 de Abril de 2026, Campo
               Maior, Alto Alentejo.
             </p>
             <div className="flex gap-2">

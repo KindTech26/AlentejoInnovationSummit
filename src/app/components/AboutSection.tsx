@@ -10,8 +10,8 @@ import {
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
-const alentejoImage =
-  "https://images.unsplash.com/photo-1568288454542-2b3070c12738?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYW1wbyUyMG1haW9yJTIwYWxlbnRlam8lMjBwb3J0dWdhbHxlbnwxfHx8fDE3NzE2MDA2NDV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+import museuImage from "../../../assets/museu.png";
+const alentejoImage = museuImage;
 
 const pillars = [
   {
@@ -144,7 +144,7 @@ export function AboutSection() {
               </p>
               <p>
                 Este evento pretende ser um ponto de encontro entre quem pensa,
-                quem faz e quem decide na área da saúde — promovendo a discussão
+                quem faz e quem decide na área da saúde  - promovendo a discussão
                 de soluções concretas e adaptadas a realidade do interior de
                 Portugal.
               </p>
@@ -154,7 +154,7 @@ export function AboutSection() {
                 proporcionam sessões práticas de cocriação. No segundo dia, o{" "}
                 <strong className="text-foreground">Summit</strong> reúne
                 oradores de referência nacional para conferências, painéis de
-                debate e casos de estudo — da telessaúde a cirurgia robótica, da
+                debate e casos de estudo  - da telessaúde a cirurgia robótica, da
                 inovação digital a investigação clínica.
               </p>
               <p>

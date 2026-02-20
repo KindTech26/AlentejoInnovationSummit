@@ -105,7 +105,7 @@ export function InnovationHubSection() {
                   no Innovation Hub do AAHIS.
                 </p>
                 <a
-                  href="mailto:info@aahis.pt?subject=Innovation Hub — Candidatura"
+                  href="mailto:info@aahis.pt?subject=Innovation Hub - Candidatura"
                   className="inline-flex items-center gap-2 text-primary text-sm hover:underline cursor-pointer"
                 >
                   Submeter candidatura
