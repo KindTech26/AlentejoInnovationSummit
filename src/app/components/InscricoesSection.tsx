@@ -15,7 +15,7 @@ const registrationTypes = [
     id: "geral",
     title: "Inscrição Geral",
     price: "Gratuito",
-    description: "Acesso ao Summit completo — 21 Abril",
+    description: "Acesso ao Summit completo - 21 Abril",
     features: [
       "Todas as sessões plenárias e painéis",
       "Conferências e casos de estudo",

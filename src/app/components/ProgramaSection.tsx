@@ -13,8 +13,8 @@ import {
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
-const conferenceImage =
-  "https://images.unsplash.com/photo-1769798643582-32ef781c45d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25mZXJlbmNlJTIwc3BlYWtlcnMlMjBzdGFnZSUyMHByZXNlbnRhdGlvbnxlbnwxfHx8fDE3NzE1OTk2MzN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+import programaImage from "../../../assets/programa.png";
+const conferenceImage = programaImage;
 
 type SessionType = "keynote" | "panel" | "break" | "case" | "workshop" | "institutional" | "closing";
 
@@ -23,8 +23,10 @@ interface Session {
   title: string;
   speaker?: string;
   description?: string;
+  bullets?: string[];
   type: SessionType;
   duration?: string;
+  featured?: boolean;
 }
 
 const day1Sessions: Session[] = [
@@ -46,7 +48,7 @@ const day2Sessions: Session[] = [
   },
   {
     time: "09:30",
-    title: "Saúde Inteligente — Desafios e Oportunidades",
+    title: "Saúde Inteligente  - Desafios e Oportunidades",
     speaker: "Henrique Martins, ISCTE",
     type: "keynote",
     duration: "30 min",
@@ -62,14 +64,20 @@ const day2Sessions: Session[] = [
   {
     time: "10:30",
     title: "Sessão de Abertura",
-    description:
-      "ULS Alto Alentejo (Presidente) | CM Campo Maior (Presidente) | Politécnico de Portalegre (Presidente) | CCDR (Presidente)",
+    bullets: [
+      "ULS Alto Alentejo (Presidente – 5min)",
+      "CM Campo Maior (Presidente – 5min)",
+      "Politécnico de Portalegre (Presidente – 5min)",
+      "CCDR (Presidente – 5min)",
+    ],
     type: "institutional",
     duration: "20 min",
+    featured: true,
   },
   {
     time: "11:00",
-    title: "Telessaúde — Caso de Estudo",
+    title: "Telessaúde  - Caso de Estudo",
+    speaker: "Hopecare",
     description: "Aplicação prática de soluções de telessaúde",
     type: "case",
     duration: "20 min",
@@ -83,7 +91,8 @@ const day2Sessions: Session[] = [
   },
   {
     time: "11:40",
-    title: "Telemonitorização — Caso de Estudo",
+    title: "Telemonitorização  - Caso de Estudo",
+    speaker: "Hopecare",
     description: "Monitorização remota de doentes",
     type: "case",
     duration: "20 min",
@@ -113,7 +122,7 @@ const day2Sessions: Session[] = [
   },
   {
     time: "14:30",
-    title: "Inovação Tecnológica — Cirurgia Robótica",
+    title: "Inovação Tecnológica  - Cirurgia Robótica",
     speaker: "Jorge Carvalho + Equipa de Barcelona",
     type: "keynote",
     duration: "30 min",
@@ -138,18 +147,25 @@ const day2Sessions: Session[] = [
       "A Inovação como Trigger da Investigação Clínica",
     speaker:
       "Secretária de Estado Helena Canhão + Champalimaud/AIBILI + ULS Sao Jose",
-    description: "Painel de debate — Moderação: Érica Cardoso",
+    description: "Painel de debate  - Moderação: Érica Cardoso",
     type: "panel",
     duration: "60 min",
   },
   {
     time: "17:00",
     title: "O Papel de Cada Um no Ecossistema de Inovação",
-    speaker:
-      "Manuel Dias (CTO ARTE), Jose Paulo (CEO HOPECARE), Luis Loures (IPP), Miguel Lopes (ULS AA), Sofia Couto da Rocha (Lusiadas Saúde), SPMS",
     description: "Painel final",
+    bullets: [
+      "Manuel Dias (CTO ARTE)",
+      "José Paulo (CEO HOPECARE)",
+      "Luís Loures (IPP)",
+      "Miguel Lopes (ULS Alto Alentejo)",
+      "Sofia Couto da Rocha (Lusíadas Saúde)",
+      "SPMS",
+    ],
     type: "panel",
     duration: "60 min",
+    featured: true,
   },
   {
     time: "18:00",
@@ -240,7 +256,7 @@ function SessionCard({ session }: { session: Session }) {
 
   return (
     <div
-      className={`flex gap-3 sm:gap-4 p-4 sm:p-5 rounded-xl border transition-all hover:shadow-sm ${styles.bg} ${styles.border}`}
+      className={`flex gap-3 sm:gap-4 p-4 sm:p-5 rounded-xl border transition-all hover:shadow-sm ${styles.bg} ${styles.border} ${session.featured ? "py-6 sm:py-7" : ""}`}
     >
       {/* Time */}
       <div className="flex-shrink-0 w-14 sm:w-16 pt-0.5">
@@ -265,7 +281,7 @@ function SessionCard({ session }: { session: Session }) {
       {/* Content */}
       <div className="flex-1 min-w-0">
         <div className="flex items-start justify-between gap-2">
-          <h4 className="text-foreground text-sm">{session.title}</h4>
+          <h4 className={`text-foreground ${session.featured ? "text-base font-semibold" : "text-sm"}`}>{session.title}</h4>
           <span
             className={`hidden sm:inline-block text-[10px] px-2 py-0.5 rounded-full flex-shrink-0 ${styles.iconBg} ${styles.iconColor}`}
           >
@@ -279,6 +295,16 @@ function SessionCard({ session }: { session: Session }) {
           <p className="text-muted-foreground text-xs mt-1">
             {session.description}
           </p>
+        )}
+        {session.bullets && (
+          <ul className="mt-2 space-y-1.5">
+            {session.bullets.map((bullet, i) => (
+              <li key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
+                <span className={`mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 ${styles.iconBg}`} />
+                {bullet}
+              </li>
+            ))}
+          </ul>
         )}
       </div>
     </div>
@@ -295,7 +321,7 @@ export function ProgramaSection() {
   const handleShare = () => {
     if (navigator.share) {
       navigator.share({
-        title: "Programa — Alto Alentejo Health Innovation Summit",
+        title: "Programa  - Alto Alentejo Health Innovation Summit",
         text: "Consulte o programa do AAHIS 2026",
         url: window.location.href + "#programa",
       });
@@ -337,7 +363,7 @@ export function ProgramaSection() {
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              <span className="hidden sm:inline">Domingo, </span>20 Abril —
+              <span className="hidden sm:inline">Domingo, </span>20 Abril  -
               Action Labs
             </button>
             <button
@@ -348,7 +374,7 @@ export function ProgramaSection() {
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              <span className="hidden sm:inline">Terça, </span>21 Abril —
+              <span className="hidden sm:inline">Terça, </span>21 Abril  -
               Summit
             </button>
           </div>
@@ -389,12 +415,12 @@ export function ProgramaSection() {
                   <h4 className="text-foreground text-sm mb-1">
                     {activeDay === 1
                       ? "Action Labs"
-                      : "Summit — Programa Completo"}
+                      : "Summit  - Programa Completo"}
                   </h4>
                   <p className="text-xs text-muted-foreground">
                     {activeDay === 1
-                      ? "20 Abril 2026 — Sessões práticas"
-                      : "21 Abril 2026 — Museu de Ciência do Café, Campo Maior"}
+                      ? "20 Abril 2026  - Sessões práticas"
+                      : "21 Abril 2026  - Museu de Ciência do Café, Campo Maior"}
                   </p>
                 </div>
               </div>

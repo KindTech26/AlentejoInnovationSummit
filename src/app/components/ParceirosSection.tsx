@@ -8,7 +8,7 @@ const partnerCategories = [
       { name: "ULS do Alto Alentejo", initials: "ULS AA" },
       { name: "Câmara Municipal de Campo Maior", initials: "CM CM" },
       { name: "CCDR Alentejo", initials: "CCDR" },
-      { name: "SPMS — Serviços Partilhados do Ministério da Saúde", initials: "SPMS" },
+      { name: "SPMS  - Serviços Partilhados do Ministério da Saúde", initials: "SPMS" },
     ],
   },
   {
@@ -16,8 +16,8 @@ const partnerCategories = [
     icon: GraduationCap,
     partners: [
       { name: "Instituto Politécnico de Portalegre", initials: "IPP" },
-      { name: "ISCTE — Instituto Universitário de Lisboa", initials: "ISCTE" },
-      { name: "CIIASM — Centro de Inovação e IA em Saúde Mental", initials: "CIIASM" },
+      { name: "ISCTE  - Instituto Universitário de Lisboa", initials: "ISCTE" },
+      { name: "CIIASM  - Centro de Inovação e IA em Saúde Mental", initials: "CIIASM" },
     ],
   },
   {
@@ -27,7 +27,7 @@ const partnerCategories = [
       { name: "HOPECARE", initials: "HC" },
       { name: "Psycare", initials: "PSY" },
       { name: "Lusíadas Saúde", initials: "LS" },
-      { name: "ARTE — Advanced Research & Technology Enablers", initials: "ARTE" },
+      { name: "ARTE  - Advanced Research & Technology Enablers", initials: "ARTE" },
     ],
   },
   {
