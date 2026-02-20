@@ -23,7 +23,7 @@ export function HeroSection() {
   const eventUrl = typeof window !== "undefined" ? window.location.href : "";
   const eventTitle = "Alto Alentejo Health Innovation Summit 2026";
   const eventDescription =
-    "20-21 Abril 2026 | Campo Maior, Alto Alentejo — Inovação, Saúde e Território";
+    "20-21 Abril 2026 | Campo Maior, Alto Alentejo | Inovação, Saúde e Território";
 
   const shareToFacebook = () => {
     window.open(
@@ -41,7 +41,7 @@ export function HeroSection() {
 
   const shareToTwitter = () => {
     window.open(
-      `https://twitter.com/intent/tweet?url=${encodeURIComponent(eventUrl)}&text=${encodeURIComponent(eventTitle + " — " + eventDescription)}`,
+      `https://twitter.com/intent/tweet?url=${encodeURIComponent(eventUrl)}&text=${encodeURIComponent(eventTitle + " | " + eventDescription)}`,
       "_blank"
     );
   };
@@ -91,7 +91,7 @@ export function HeroSection() {
         <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md rounded-full px-6 py-2.5 mb-10 border border-white/15">
           <Calendar className="w-4 h-4 text-[#4fd1b8]" />
           <span className="text-white/90 text-sm tracking-wide">
-            20 — 21 Abril 2026
+            20 - 21 Abril 2026
           </span>
           <span className="w-1 h-1 rounded-full bg-white/30" />
           <MapPin className="w-4 h-4 text-[#4fd1b8]" />
@@ -102,14 +102,27 @@ export function HeroSection() {
 
         {/* Title */}
         <h1
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
-          style={{ lineHeight: 1.08, letterSpacing: "-0.02em" }}
+          className="text-[2.75rem] sm:text-[3.5rem] md:text-[4.25rem] lg:text-[5.25rem] font-bold text-white mb-6"
+          style={{ lineHeight: 0.9, letterSpacing: "-0.04em" }}
         >
-          Alto Alentejo
+          <span className="font-normal">Alto Alentejo</span>
           <br />
-          <span style={{ color: "#4fd1b8" }}>Health Innovation</span>
+          <span
+            className="health-innovation-glow"
+            style={{
+              background: "linear-gradient(90deg, #4fd1b8, #3bbfa8, #4fd1b8, #b8f0e6, #4fd1b8, #3bbfa8, #4fd1b8)",
+              backgroundSize: "400% 100%",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              animation: "gradientMove 8s ease-in-out infinite",
+              filter: "drop-shadow(0 0 20px rgba(255, 255, 255, 0.3)) drop-shadow(0 0 40px rgba(79, 209, 184, 0.2))",
+            }}
+          >
+            Health Innovation
+          </span>
           <br />
-          Summit
+          <span className="font-normal italic">Summit</span>
         </h1>
 
         {/* Tagline */}

@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Activity } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import tituloEventoBranco from "../../../assets/tituloeventobranco.png";
+import tituloEventoPreto from "../../../assets/tituloeventopreto.png";
 
 const navLinks = [
   { id: "sobre", label: "O Evento" },
@@ -61,25 +63,15 @@ export function Navbar() {
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="flex items-center gap-2.5 cursor-pointer"
           >
-            <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
-              <Activity className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <div className="hidden sm:block">
-              <span
-                className={`text-sm tracking-wide block transition-colors duration-300 ${
-                  isScrolled ? "text-foreground" : "text-white"
-                }`}
-              >
-                AAHIS
-              </span>
-              <span
-                className={`text-[10px] tracking-[0.15em] uppercase block transition-colors duration-300 ${
-                  isScrolled ? "text-muted-foreground" : "text-white/60"
-                }`}
-              >
-                Health Innovation Summit
-              </span>
-            </div>
+            <img
+              src={isScrolled ? tituloEventoPreto : tituloEventoBranco}
+              alt="Alto Alentejo Health Innovation Summit"
+              className={`h-9 sm:h-10 w-auto transition-all duration-300 ${
+                isScrolled
+                  ? "opacity-60 sepia-[0.1] saturate-[3] hue-rotate-[185deg]"
+                  : "opacity-70"
+              }`}
+            />
           </button>
 
           {/* Desktop Nav */}
