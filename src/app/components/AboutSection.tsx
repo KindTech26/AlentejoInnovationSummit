@@ -138,17 +138,17 @@ export function AboutSection() {
         </div>
 
         {/* Pillars */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-5">
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
-              className="group bg-card border border-border rounded-2xl p-5 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
+              className="group bg-card border border-border rounded-xl sm:rounded-2xl p-3 sm:p-5 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
             >
-              <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center mb-3 group-hover:bg-primary/10 transition-colors">
-                <pillar.icon className="w-5 h-5 text-primary" />
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-secondary flex items-center justify-center mb-2 sm:mb-3 group-hover:bg-primary/10 transition-colors">
+                <pillar.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
               </div>
-              <h4 className="text-foreground mb-1.5 text-sm">{pillar.title}</h4>
-              <p className="text-muted-foreground text-xs">{pillar.desc}</p>
+              <h4 className="text-foreground mb-1 sm:mb-1.5 text-xs sm:text-sm">{pillar.title}</h4>
+              <p className="text-muted-foreground text-[10px] sm:text-xs leading-tight sm:leading-normal">{pillar.desc}</p>
             </div>
           ))}
         </div>

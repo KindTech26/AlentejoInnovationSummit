@@ -626,11 +626,11 @@ export function ProgramaSection() {
 
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Sidebar */}
-          <div className="lg:col-span-1 order-2 lg:order-1">
+          <div className="lg:col-span-1 order-1">
             <div className="lg:sticky lg:top-24 space-y-4">
               {/* Day info card */}
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
-                <div className="aspect-[3/2] overflow-hidden">
+                <div className="hidden sm:block aspect-[3/2] overflow-hidden">
                   <ImageWithFallback
                     src={conferenceImage}
                     alt="Summit"
@@ -688,7 +688,7 @@ export function ProgramaSection() {
           </div>
 
           {/* Sessions */}
-          <div className="lg:col-span-3 order-1 lg:order-2">
+          <div className="lg:col-span-3 order-2">
             {activeDay === 1 ? (
               <div>
                 <div className="bg-card border border-border rounded-2xl p-6 mb-3">

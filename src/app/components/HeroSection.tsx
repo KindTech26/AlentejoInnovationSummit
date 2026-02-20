@@ -146,25 +146,26 @@ export function HeroSection() {
             Inscreva-se
           </button>
 
-          <button
-            onClick={() => {
-              const el = document.getElementById("programa");
-              if (el) el.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="px-8 py-3.5 bg-white/10 backdrop-blur-md text-white border border-white/15 rounded-full hover:bg-white/15 transition-all cursor-pointer text-sm tracking-wide"
-          >
-            Ver Programa
-          </button>
-
-          {/* Share */}
-          <div className="relative">
+          <div className="flex items-center gap-2 sm:contents">
             <button
-              onClick={() => setShareOpen(!shareOpen)}
-              className="px-6 py-3.5 bg-white/5 backdrop-blur-md text-white/80 border border-white/10 rounded-full hover:bg-white/10 transition-all cursor-pointer flex items-center gap-2 text-sm"
+              onClick={() => {
+                const el = document.getElementById("programa");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="px-5 py-2.5 sm:px-8 sm:py-3.5 bg-white/10 backdrop-blur-md text-white border border-white/15 rounded-full hover:bg-white/15 transition-all cursor-pointer text-xs sm:text-sm tracking-wide"
             >
-              <Share2 className="w-4 h-4" />
-              Partilhar
+              Ver Programa
             </button>
+
+            {/* Share */}
+            <div className="relative">
+              <button
+                onClick={() => setShareOpen(!shareOpen)}
+                className="px-4 py-2.5 sm:px-6 sm:py-3.5 bg-white/5 backdrop-blur-md text-white/80 border border-white/10 rounded-full hover:bg-white/10 transition-all cursor-pointer flex items-center gap-2 text-xs sm:text-sm"
+              >
+                <Share2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                Partilhar
+              </button>
 
             {shareOpen && (
               <div className="absolute top-full mt-3 right-0 sm:left-1/2 sm:-translate-x-1/2 bg-white rounded-2xl shadow-2xl border border-black/5 p-2 min-w-[240px] z-50">
@@ -227,6 +228,7 @@ export function HeroSection() {
                 </button>
               </div>
             )}
+            </div>
           </div>
         </div>
 
