@@ -1,116 +1,97 @@
-import { Handshake, Building2, GraduationCap, HeartPulse, Landmark } from "lucide-react";
+type PartnerLogo = {
+  alt: string;
+  name: string;
+  src: string;
+};
 
-const partnerCategories = [
-  {
-    title: "Parceiros Institucionais",
-    icon: Building2,
-    partners: [
-      { name: "ULS do Alto Alentejo", initials: "ULS AA" },
-      { name: "Câmara Municipal de Campo Maior", initials: "CM CM" },
-      { name: "CCDR Alentejo", initials: "CCDR" },
-      { name: "SPMS  - Serviços Partilhados do Ministério da Saúde", initials: "SPMS" },
-    ],
-  },
-  {
-    title: "Parceiros Académicos e Investigação",
-    icon: GraduationCap,
-    partners: [
-      { name: "Instituto Politécnico de Portalegre", initials: "IPP" },
-      { name: "ISCTE  - Instituto Universitário de Lisboa", initials: "ISCTE" },
-      { name: "CIIASM  - Centro de Inovação e IA em Saúde Mental", initials: "CIIASM" },
-    ],
-  },
-  {
-    title: "Parceiros de Saúde e Inovação",
-    icon: HeartPulse,
-    partners: [
-      { name: "HOPECARE", initials: "HC" },
-      { name: "Psycare", initials: "PSY" },
-      { name: "Lusíadas Saúde", initials: "LS" },
-      { name: "ARTE  - Advanced Research & Technology Enablers", initials: "ARTE" },
-    ],
-  },
-  {
-    title: "Parceiros Estratégicos",
-    icon: Landmark,
-    partners: [
-      { name: "Champalimaud Foundation", initials: "CF" },
-      { name: "AIBILI", initials: "AIBILI" },
-      { name: "ULS São José", initials: "ULS SJ" },
-    ],
-  },
+const partnersFromAssets = Object.entries(
+  import.meta.glob("../../../assets/parceiros/*.{png,jpg,jpeg,svg,webp,avif}", {
+    eager: true,
+    import: "default",
+  }),
+) as [string, string][];
+
+function formatPartnerName(filePath: string) {
+  const rawName = filePath.split("/").pop()?.replace(/\.[^/.]+$/, "") ?? "parceiro";
+  return rawName
+    .replace(/[_-]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+const partnerLogos: PartnerLogo[] = partnersFromAssets
+  .map(([path, src]) => {
+    const name = formatPartnerName(path);
+    return {
+      name,
+      src,
+      alt: `Logótipo do parceiro ${name}`,
+    };
+  })
+  .sort((a, b) => a.name.localeCompare(b.name, "pt"));
+
+const initialPartners = [
+  "Câmara Municipal de Campo Maior",
+  "Centro de Inteligência Competitiva do Alentejo",
+  "Instituto Politécnico de Portalegre",
 ];
 
 export function ParceirosSection() {
   return (
-    <section id="parceiros" className="py-20 md:py-28 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <span className="inline-block text-primary text-xs tracking-[0.2em] uppercase mb-4">
-            Parceiros
+    <section
+      id="parceiros"
+      className="py-20 md:py-24 bg-gradient-to-b from-slate-100/80 via-slate-50 to-violet-100/30"
+    >
+      <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="inline-block text-primary text-xs tracking-[0.24em] uppercase mb-4">
+            Technologies &amp; Partners
           </span>
-          <h2 className="text-3xl md:text-4xl text-foreground mb-5">
-            Os Nossos Parceiros
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-5">
+            Ecossistema de Parceiros
           </h2>
-          <p className="text-muted-foreground">
-            O Summit conta com o apoio de instituições de referência nas áreas da
-            saúde, investigação, tecnologia e desenvolvimento regional.
+          <p className="text-muted-foreground text-sm sm:text-base">
+            Instituições, centros de investigação e organizações que impulsionam inovação em saúde no Alto Alentejo.
           </p>
         </div>
 
-        {/* Categories */}
-        <div className="space-y-10">
-          {partnerCategories.map((category) => (
-            <div key={category.title}>
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <category.icon className="w-4.5 h-4.5 text-primary" />
-                </div>
-                <h3 className="text-lg text-foreground">{category.title}</h3>
-              </div>
-
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                {category.partners.map((partner) => (
-                  <div
-                    key={partner.name}
-                    className="group bg-card border border-border rounded-xl p-5 hover:border-primary/15 hover:shadow-md hover:shadow-primary/5 transition-all duration-300 flex items-center gap-3"
-                  >
-                    <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0 group-hover:bg-primary/5 transition-colors">
-                      <span className="text-primary text-[11px] tracking-wider text-center leading-tight">
-                        {partner.initials}
-                      </span>
-                    </div>
-                    <p className="text-foreground text-sm leading-snug">
-                      {partner.name}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
+        <div className="mt-8 rounded-2xl border border-primary/15 bg-white/85 p-5">
+          <p className="text-xs uppercase tracking-[0.14em] text-muted-foreground mb-3">
+            Parceiros já confirmados nesta fase
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {initialPartners.map((partner) => (
+              <span
+                key={partner}
+                className="inline-flex items-center rounded-full border border-border bg-background px-3 py-1.5 text-xs text-foreground"
+              >
+                {partner}
+              </span>
+            ))}
+          </div>
+          <p className="text-xs text-muted-foreground mt-3">
+            Logótipos em atualização contínua.
+          </p>
         </div>
 
-        {/* Become a partner */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex flex-col items-center bg-card border border-border rounded-2xl p-8 max-w-md">
-            <div className="w-14 h-14 rounded-full bg-secondary flex items-center justify-center mb-4">
-              <Handshake className="w-7 h-7 text-primary" />
-            </div>
-            <h3 className="text-xl text-foreground mb-2">
-              Torne-se Parceiro
-            </h3>
-            <p className="text-muted-foreground text-sm mb-6">
-              Associe a sua organização ao Alto Alentejo Health Innovation
-              Summit. Várias modalidades de parceria disponíveis.
-            </p>
-            <a
-              href="mailto:info@aahis.pt"
-              className="px-6 py-3 bg-primary text-primary-foreground rounded-xl hover:opacity-90 transition-all cursor-pointer text-sm inline-block"
+        <div className="mt-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-5 md:gap-6">
+          {partnerLogos.map((partner) => (
+            <article
+              key={partner.src}
+              className="group transition-all duration-300 ease-in-out hover:scale-105"
             >
-              Contactar Organização
-            </a>
-          </div>
+              <div className="rounded-2xl bg-white p-0.5 shadow-[0_8px_24px_rgba(15,23,42,0.08)] transition-all duration-300 ease-in-out group-hover:shadow-[0_16px_35px_rgba(15,23,42,0.16)]">
+                <div className="[clip-path:polygon(25%_0%,75%_0%,100%_50%,75%_100%,25%_100%,0%_50%)] bg-white px-5 py-8 sm:px-6 sm:py-10 min-h-[140px] flex items-center justify-center">
+                  <img
+                    src={partner.src}
+                    alt={partner.alt}
+                    loading="lazy"
+                    className="h-16 w-full object-contain sm:h-20"
+                  />
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
