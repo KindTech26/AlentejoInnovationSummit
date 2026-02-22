@@ -24,44 +24,55 @@ interface Session {
   title: string;
   speaker?: string;
   description?: string;
-  bullets?: string[];
+  bullets?: (string | { title: string; speaker: string })[];
   type: SessionType;
   duration?: string;
   featured?: boolean;
+  seats?: string;
+  formadores?: string;
+  moderacao?: string;
 }
 
 const day1Sessions: Session[] = [
   {
     time: "09:00",
-    title: "Action Lab 1 - Investigação Clínica",
+    title: "Investigação Clínica - Por onde começar?",
     description:
       "Workshop prático com foco em investigação clínica aplicada ao contexto hospitalar e territorial.",
     type: "workshop",
-    duration: "90 min",
+    duration: "7h",
+    seats: "30 lugares",
+    formadores: "a designar, CARE IPP e Teresa Luciano - ULS São José",
   },
   {
-    time: "11:00",
-    title: "Action Lab 2 - Inteligência Artificial na prática",
+    time: "09:00",
+    title: "Inteligência Artificial para Profissionais de Saúde",
     description:
       "Capacitação para uso de ferramentas de IA com abordagem pragmática para profissionais de saúde.",
     type: "workshop",
-    duration: "90 min",
+    duration: "7h",
+    seats: "40 lugares",
+    formadores: "Maurício Alves - ULS Alto Alentejo, Hélder Palheira - HC Healthcare e Rafael Pinto - Visual Thinking",
   },
   {
-    time: "14:00",
-    title: "Action Lab 3 - Design Thinking em Saúde",
+    time: "09:00",
+    title: "Design Thinking para Profissionais de Saúde",
     description:
       "Dinâmicas colaborativas para desenho de soluções e melhoria contínua de processos clínicos.",
     type: "workshop",
-    duration: "90 min",
+    duration: "7h",
+    seats: "30 lugares",
+    formadores: "a confirmar",
   },
   {
-    time: "16:00",
-    title: "Action Lab 4 - Técnicas diferenciadas de apoio clínico",
+    time: "09:00",
+    title: "Técnicas Avançadas Point-of-Care",
     description:
-      "Sessão prática: luz azul, laser e eco em contexto de apoio clínico.",
+      "Sessões práticas: Fitobiomodulação por Luz Azul, Oxigenoterapia tópica contínua, laser e ecografia",
     type: "workshop",
-    duration: "90 min",
+    duration: "7h",
+    seats: "20 lugares",
+    formadores: "Cláudia Ribeiro - Daylife e Beatriz Mourato - ULS Alto Alentejo",
   },
 ];
 
@@ -73,122 +84,100 @@ const day2Sessions: Session[] = [
     type: "break",
   },
   {
+    time: "09:00",
+    title: "Inteligência Artificial - Desafios e Oportunidades para uma Saúde Inteligente",
+    speaker: "Maurício Alves, ULS Alto Alentejo",
+    type: "keynote",
+    duration: "30 min",
+  },
+  {
     time: "09:30",
-    title: "Saúde Inteligente  - Desafios e Oportunidades",
-    speaker: "Henrique Martins, ISCTE",
+    title: "Living Lab e a Estratégia de Inovação na ULS Alto Alentejo",
+    speaker: "Miguel Lopes, ULS Alto Alentejo",
     type: "keynote",
     duration: "30 min",
   },
   {
     time: "10:00",
-    title: "Living Lab ULS Alto Alentejo",
-    speaker: "Miguel Lopes, ULS Alto Alentejo",
-    description: "Inclui sessão de perguntas e respostas",
-    type: "keynote",
-    duration: "30 min",
-  },
-  {
-    time: "10:30",
     title: "Sessão de Abertura",
-    bullets: [
-      "ULS Alto Alentejo (Presidente – 5min)",
-      "CM Campo Maior (Presidente – 5min)",
-      "Politécnico de Portalegre (Presidente – 5min)",
-      "CCDR (Presidente – 5min)",
-    ],
     type: "institutional",
-    duration: "20 min",
+    duration: "30 min",
     featured: true,
   },
   {
+    time: "10:30",
+    title: "Networking Coffee Break",
+    type: "break",
+    duration: "30 min",
+  },
+  {
     time: "11:00",
-    title: "Telessaúde  - Caso de Estudo",
-    speaker: "Hopecare",
-    description: "Aplicação prática de soluções de telessaúde",
+    title: "Intervenções Inovadoras de Saúde Digital",
+    moderacao: "a designar",
+    bullets: [
+      { title: "Telessaúde - Caso de Estudo", speaker: "Neuza Reis e Ana Isabel, ULS São José" },
+      { title: "Telemonitorização - Caso de Estudo", speaker: "Sílvio Almeida, ULS Entre Douro e Vouga" },
+      { title: "Sistema de Apoio Inteligente à Tomada de Decisão", speaker: "Projeto HUMAI" },
+    ],
     type: "case",
-    duration: "20 min",
-  },
-  {
-    time: "11:20",
-    title: "Sistema de Apoio Inteligente a Tomada de Decisão",
-    description: "Caso de estudo: Urgência",
-    type: "case",
-    duration: "20 min",
-  },
-  {
-    time: "11:40",
-    title: "Telemonitorização  - Caso de Estudo",
-    speaker: "Hopecare",
-    description: "Monitorização remota de doentes",
-    type: "case",
-    duration: "20 min",
+    duration: "60 min",
   },
   {
     time: "12:00",
-    title: "Como Inovar com Impacto na Saúde das Pessoas?",
-    speaker: "Tiago Taveira Gomes + Ricardo Correia",
-    description: "Utilização de dados e inovação",
+    title: "Como Inovar com Impacto na Saúde Pública?",
+    speaker: "Cátia Sousa Pinto - SPMS, Joana Seringa - ENSP e Rui Cunha - ASKLEPIC",
+    description: "Utilização de dados, inovação e a saúde das pessoas.",
+    moderacao: "André Gomes - ULS Alto Alentejo",
     type: "keynote",
     duration: "60 min",
   },
   {
     time: "13:00",
     title: "Almoço",
-    description:
-      "Self-service + visita ao Centro Ciência do Café",
+    description: "Self-service + visita ao Centro Ciência do Café",
     type: "break",
   },
   {
-    time: "14:00",
-    title: "Liderança e Comunicação Organizacional",
-    speaker: "Cláudia Telles de Freitas (ou convidado a confirmar)",
-    description: "Sessão durante o almoço",
-    type: "keynote",
-    duration: "30 min",
-  },
-  {
     time: "14:30",
-    title: "Inovação Tecnológica  - Cirurgia Robótica",
-    speaker: "Jorge Carvalho + Equipa de Barcelona",
+    title: "Inovação Tecnológica - Cirurgia Digital e Robótica",
+    speaker: "Jorge Carvalho, ULS Santo António",
+    moderacao: "Guilherme Fialho - ULS Alto Alentejo",
     type: "keynote",
     duration: "30 min",
   },
   {
     time: "15:00",
-    title: "Estratégias de Inovação Digital em Saúde em Territórios de Baixa Densidade",
-    description:
-      "Caso de estudo (HOPECARE e/ou Centro de Inovação e IA em Saúde do Alentejo - convite em curso)",
+    title: "Estratégias de Financiamento da Inovação em Territórios de Baixa Densidade",
+    speaker: "Carla Pereira - SINASE, João Transmontano - FINAO BIOTECH*",
+    moderacao: "a designar - ULS Alto Alentejo",
     type: "case",
     duration: "30 min",
   },
   {
     time: "15:30",
     title: "Inovação em Saúde Mental",
-    speaker: "Estela Bastos (Psycare e CIIASM)",
+    speaker: "Estela Bastos, Psycare | CIIASM",
+    moderacao: "a designar - ULS Alto Alentejo",
     type: "keynote",
     duration: "30 min",
   },
   {
     time: "16:00",
-    title:
-      "A Inovação como Trigger da Investigação Clínica",
-    speaker:
-      "Secretária de Estado Helena Canhão + Champalimaud/AIBILI + ULS Sao Jose",
-    description: "Painel de debate  - Moderação: Érica Cardoso",
+    title: "A Inovação como Trigger para a Investigação Clínica",
+    speaker: "Helena Canhão - Secretária de Estado da Ciência e Inovação*, Firmino Machado - UA, Teresa Luciano - ULS São José",
+    moderacao: "Érica Cardoso - ULS Alto Alentejo",
     type: "panel",
     duration: "60 min",
   },
   {
     time: "17:00",
-    title: "O Papel de Cada Um no Ecossistema de Inovação",
-    description: "Painel final",
+    title: "O Papel de Cada Agente no Ecossistema de Inovação em Saúde",
+    moderacao: "André Neto de Oliveira - CNN Portugal*",
     bullets: [
-      "Manuel Dias (CTO ARTE)",
-      "José Paulo (CEO HOPECARE)",
-      "Luís Loures (IPP)",
-      "Miguel Lopes (ULS Alto Alentejo)",
-      "Sofia Couto da Rocha (Lusíadas Saúde)",
-      "SPMS",
+      "Manuel Dias - CTO/ARTE*",
+      "José Paulo - CEO HOPECARE*",
+      "Luís Loures - Politécnico de Portalegre*",
+      "Miguel Lopes - ULS Alto Alentejo",
     ],
     type: "panel",
     duration: "60 min",
@@ -196,16 +185,15 @@ const day2Sessions: Session[] = [
   },
   {
     time: "18:00",
-    title:
-      "A Inovação na Saúde como Agente de Mudança das Organizações e Políticas de Saúde",
-    speaker: "Ministra da Saúde",
+    title: "A Inovação na Saúde como Agente de Mudança das Organizações e Políticas de Saúde",
+    speaker: "Ana Paula Martins, Ministra da Saúde*",
     type: "keynote",
     duration: "20 min",
   },
   {
     time: "18:30",
     title: "Cocktail de Encerramento",
-    description: "Networking e celebração",
+    description: "Café de despedida",
     type: "closing",
   },
 ];
@@ -309,29 +297,55 @@ function SessionCard({ session }: { session: Session }) {
       <div className="flex-1 min-w-0">
         <div className="flex items-start justify-between gap-2">
           <h4 className={`text-foreground ${session.featured ? "text-base font-semibold" : "text-sm"}`}>{session.title}</h4>
-          <span
-            className={`hidden sm:inline-block text-[10px] px-2 py-0.5 rounded-full flex-shrink-0 ${styles.iconBg} ${styles.iconColor}`}
-          >
-            {styles.label}
-          </span>
+          <div className="flex flex-col items-end gap-1 flex-shrink-0">
+            <span
+              className={`hidden sm:inline-block text-[10px] px-2 py-0.5 rounded-full ${styles.iconBg} ${styles.iconColor}`}
+            >
+              {styles.label}
+            </span>
+            {session.seats && (
+              <span className="hidden sm:inline-block text-[10px] px-2 py-0.5 rounded-full bg-blue-50 text-blue-600">
+                {session.seats}
+              </span>
+            )}
+          </div>
         </div>
+        {session.description && (
+          <p className="text-muted-foreground text-xs mt-1 whitespace-pre-line">
+            {session.description}
+          </p>
+        )}
         {session.speaker && (
           <p className="text-primary text-xs mt-1">{session.speaker}</p>
         )}
-        {session.description && (
-          <p className="text-muted-foreground text-xs mt-1">
-            {session.description}
+        {session.formadores && (
+          <p className="text-xs mt-1.5">
+            <span className="text-foreground/70 font-medium">Formadores:</span>{" "}
+            <span className="text-muted-foreground">{session.formadores}</span>
           </p>
         )}
         {session.bullets && (
           <ul className="mt-2 space-y-1.5">
             {session.bullets.map((bullet, i) => (
-              <li key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
+              <li key={i} className="flex items-start gap-2 text-xs">
                 <span className={`mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 ${styles.iconBg}`} />
-                {bullet}
+                {typeof bullet === "string" ? (
+                  <span className="text-muted-foreground">{bullet}</span>
+                ) : (
+                  <span>
+                    <span className="text-foreground/80 font-medium">{bullet.title}</span>
+                    <br />
+                    <span className="text-muted-foreground">{bullet.speaker}</span>
+                  </span>
+                )}
               </li>
             ))}
           </ul>
+        )}
+        {session.moderacao && (
+          <p className="text-xs text-muted-foreground/70 mt-2 italic">
+            Moderação: {session.moderacao}
+          </p>
         )}
       </div>
     </div>
@@ -476,8 +490,18 @@ export function ProgramaSection() {
             doc.setTextColor(100, 110, 120);
             doc.setFillColor(typeColor[0], typeColor[1], typeColor[2]);
             doc.circle(margin + 26, y - 1, 0.8, "F");
-            doc.text(bullet, margin + 29, y);
+            const bulletText = typeof bullet === "string" ? bullet : `${bullet.title} — ${bullet.speaker}`;
+            doc.text(bulletText, margin + 29, y);
           }
+        }
+
+        // Moderação
+        if (session.moderacao) {
+          y += 4;
+          doc.setFontSize(7.5);
+          doc.setFont("helvetica", "italic");
+          doc.setTextColor(130, 140, 150);
+          doc.text(`Moderação: ${session.moderacao}`, margin + 24, y);
         }
 
         // Separator line
@@ -495,7 +519,7 @@ export function ProgramaSection() {
     doc.setFontSize(11);
     doc.setFont("helvetica", "bold");
     doc.setTextColor(255, 255, 255);
-    doc.text("Dia 1  -  Domingo, 20 Abril  |  Action Labs", pageWidth / 2, y + 7, { align: "center" });
+    doc.text("Dia 1  -  Segunda, 20 Abril  |  Action Labs", pageWidth / 2, y + 7, { align: "center" });
     y += 18;
 
     renderSessions(day1Sessions, true);
@@ -558,7 +582,7 @@ export function ProgramaSection() {
 
   return (
     <section id="programa" className="py-20 md:py-28 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="site-container">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-12">
           <span className="inline-block text-primary text-xs tracking-[0.2em] uppercase mb-4">
@@ -589,7 +613,7 @@ export function ProgramaSection() {
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              <span className="hidden sm:inline">Domingo, </span>20 Abril  -
+              <span className="hidden sm:inline">Segunda, </span>20 Abril  -
               Action Labs
             </button>
             <button
@@ -646,7 +670,7 @@ export function ProgramaSection() {
                   <p className="text-xs text-muted-foreground">
                     {activeDay === 1
                       ? "20 Abril 2026  - Sessões práticas"
-                      : "21 Abril 2026  - Museu de Ciência do Café, Campo Maior"}
+                      : "21 Abril 2026  - Centro de Ciência do Café, Campo Maior"}
                   </p>
                 </div>
               </div>
@@ -657,12 +681,17 @@ export function ProgramaSection() {
                   Legenda
                 </p>
                 <div className="space-y-2">
-                  {[
-                    { label: "Conferência", color: "bg-primary/10 text-primary" },
-                    { label: "Painel de Debate", color: "bg-purple-100 text-purple-600" },
-                    { label: "Caso de Estudo", color: "bg-amber-100 text-amber-600" },
-                    { label: "Pausa / Refeição", color: "bg-muted text-muted-foreground" },
-                  ].map((item) => (
+                  {(activeDay === 1
+                    ? [
+                        { label: "Workshop", color: "bg-blue-100 text-blue-600" },
+                      ]
+                    : [
+                        { label: "Conferência", color: "bg-primary/10 text-primary" },
+                        { label: "Painel de Debate", color: "bg-purple-100 text-purple-600" },
+                        { label: "Caso de Estudo", color: "bg-amber-100 text-amber-600" },
+                        { label: "Pausa / Refeição", color: "bg-muted text-muted-foreground" },
+                      ]
+                  ).map((item) => (
                     <div key={item.label} className="flex items-center gap-2">
                       <div className={`w-3 h-3 rounded ${item.color}`} />
                       <span className="text-xs text-muted-foreground">
@@ -697,13 +726,13 @@ export function ProgramaSection() {
                       <Users className="w-5 h-5 text-blue-600" />
                     </div>
                     <div>
-                      <h3 className="text-foreground text-lg">Action Labs - 20 Abril</h3>
+                      <h3 className="text-foreground text-lg">Action Labs - Segunda, 20 Abril</h3>
                       <p className="text-sm text-muted-foreground mt-1">
-                        Workshops práticos com dinâmicas de grupo para capacitação em inovação, investigação
+                        4 Workshops de dia inteiro (7h cada) com dinâmicas de grupo para capacitação em inovação, investigação
                         e melhoria contínua.
                       </p>
                       <p className="text-xs text-muted-foreground mt-2">
-                        Local confirmado: Centro de Inteligência Competitiva, Campo Maior.
+                        Centro de Inteligência Competitiva do Alentejo, Campo Maior.
                       </p>
                     </div>
                   </div>
@@ -713,12 +742,28 @@ export function ProgramaSection() {
                     <SessionCard key={index} session={session} />
                   ))}
                 </div>
+
+                {/* Schedule info */}
+                <div className="bg-card border border-border rounded-2xl p-5 mt-3">
+                  <div className="space-y-2 text-sm text-muted-foreground">
+                    <p><span className="text-foreground font-medium">Horário:</span> 9h às 13h e 14h às 18h</p>
+                    <p><span className="text-foreground font-medium">Networking Coffee-breaks:</span> 10h30–11h e 16h–16h30</p>
+                    <p><span className="text-foreground font-medium">Almoço Volante:</span> 13h–14h (no edifício)</p>
+                  </div>
+                </div>
               </div>
             ) : (
-              <div className="space-y-2">
-                {sessions.map((session, index) => (
-                  <SessionCard key={index} session={session} />
-                ))}
+              <div>
+                <div className="space-y-2">
+                  {sessions.map((session, index) => (
+                    <SessionCard key={index} session={session} />
+                  ))}
+                </div>
+                <div className="bg-card border border-border rounded-2xl p-5 mt-3">
+                  <p className="text-sm text-muted-foreground">
+                    <span className="text-foreground font-medium">Nota:</span> Café, água e snacks estarão disponíveis todo o dia em sala paralela, de forma a não parar os trabalhos.
+                  </p>
+                </div>
               </div>
             )}
 

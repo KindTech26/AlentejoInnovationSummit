@@ -1,20 +1,11 @@
-import { useState } from "react";
 import {
-  ArrowRight,
   Check,
-  UserPlus,
   CalendarCheck,
   MapPin,
   Users,
+  AlertTriangle,
+  ExternalLink,
 } from "lucide-react";
-
-type Profile = {
-  id: "geral" | "labs" | "estudante";
-  label: string;
-  idealFor: string;
-  extras: string[];
-  microcopy?: string;
-};
 
 const commonIncludes = [
   "Acesso às sessões plenárias e painéis",
@@ -25,49 +16,15 @@ const commonIncludes = [
   "Cocktail de encerramento",
 ];
 
-const profiles: Profile[] = [
-  {
-    id: "geral",
-    label: "Geral",
-    idealFor: "Profissionais e participantes que querem acompanhar o Summit no Dia 2.",
-    extras: ["Acesso ao Summit (Dia 2 — 21 Abril)"],
-  },
-  {
-    id: "labs",
-    label: "Action Labs + Summit",
-    idealFor: "Quem quer uma experiência completa com componente prática e colaboração.",
-    extras: [
-      "Acesso ao Dia 1 (Action Labs)",
-      "Workshops e sessões de co-criação",
-      "Networking alargado durante 2 dias",
-    ],
-    microcopy: "Mais completo",
-  },
-  {
-    id: "estudante",
-    label: "Estudante",
-    idealFor: "Estudantes do ensino superior com interesse em inovação e saúde.",
-    extras: ["Acesso de estudante com cartão válido"],
-    microcopy: "Sujeito a verificação",
-  },
-];
-
 function RegistrationSection() {
-  const [selectedProfile, setSelectedProfile] = useState<Profile["id"]>("geral");
-  const currentProfile = profiles.find((profile) => profile.id === selectedProfile) ?? profiles[0];
-
-  const handleInscricao = () => {
-    alert(
-      "O formulário de inscrição estará disponível em breve. Obrigado pelo seu interesse no Alto Alentejo Health Innovation Summit!"
-    );
-  };
+  const formUrl = "https://forms.office.com/e/9NiDpwjHWZ";
 
   return (
     <section
       id="inscricoes"
       className="py-20 md:py-28 bg-gradient-to-b from-white via-slate-50/60 to-violet-50/30"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="site-container">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <span className="inline-block text-primary text-xs tracking-[0.2em] uppercase mb-4">
             INSCRIÇÕES
@@ -75,115 +32,95 @@ function RegistrationSection() {
           <h2 className="text-3xl md:text-4xl text-foreground mb-5">
             Inscreve-te no Summit
           </h2>
-          <p className="text-muted-foreground text-sm sm:text-base">
-            Participação gratuita. Lugares limitados - reserva já.
+          <p className="text-foreground text-sm sm:text-base">
+            Participe nos Action Labs e no Summit.
           </p>
-        </div>
-
-        <div className="mb-8 rounded-2xl border border-primary/15 bg-white/90 p-6 shadow-[0_8px_28px_rgba(15,23,42,0.06)]">
-          <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-            <h3 className="text-lg text-foreground">O que inclui</h3>
-            <span className="text-xs text-primary tracking-wide uppercase">
-              Gratuito para todos os perfis
-            </span>
-          </div>
-          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {commonIncludes.map((item) => (
-              <li key={item} className="flex items-start gap-2.5">
-                <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-sm text-muted-foreground">{item}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="text-xs text-muted-foreground mt-5">
-            A inscrição é gratuita para todos os perfis.
+          <p className="text-muted-foreground text-sm sm:text-base mt-2">
+            Evento exclusivo. Lugares limitados - reserve o seu lugar quanto
+            antes.
           </p>
-        </div>
-
-        <div className="rounded-2xl border border-border bg-card/95 p-6 sm:p-7">
-          <fieldset>
-            <legend className="text-sm uppercase tracking-[0.14em] text-muted-foreground mb-4">
-              Escolhe o teu perfil
-            </legend>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-              {profiles.map((profile) => {
-                const isActive = selectedProfile === profile.id;
-                return (
-                  <label
-                    key={profile.id}
-                    className={`block cursor-pointer rounded-xl border p-4 transition-all duration-300 focus-within:ring-2 focus-within:ring-primary/30 ${
-                      isActive
-                        ? "border-primary bg-primary/[0.05] shadow-md shadow-primary/10"
-                        : "border-border bg-background/80 hover:border-primary/35 hover:bg-primary/[0.02]"
-                    }`}
-                    role="radio"
-                    aria-checked={isActive}
-                  >
-                    <input
-                      type="radio"
-                      name="registration-profile"
-                      value={profile.id}
-                      checked={isActive}
-                      onChange={() => setSelectedProfile(profile.id)}
-                      className="sr-only"
-                    />
-                    <div className="flex items-center justify-between gap-3">
-                      <span className="text-sm text-foreground">{profile.label}</span>
-                      <span
-                        className={`w-4 h-4 rounded-full border transition-all ${
-                          isActive
-                            ? "border-primary bg-primary ring-2 ring-primary/20"
-                            : "border-muted-foreground/40"
-                        }`}
-                      />
-                    </div>
-                    {profile.microcopy && (
-                      <p className="mt-2 text-[11px] text-primary">{profile.microcopy}</p>
-                    )}
-                  </label>
-                );
-              })}
+          <div className="mt-4">
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/[0.08] px-3.5 py-1.5">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+              <span className="text-xs sm:text-sm text-primary">
+                Abertura das inscrições: 1 de março
+              </span>
             </div>
-          </fieldset>
-
-          <div className="mt-6 rounded-xl bg-secondary/45 border border-border p-5">
-            <p className="text-xs uppercase tracking-[0.12em] text-muted-foreground mb-2">
-              Ideal para
-            </p>
-            <p className="text-sm text-foreground">{currentProfile.idealFor}</p>
-
-            <p className="text-xs uppercase tracking-[0.12em] text-muted-foreground mt-5 mb-2">
-              Inclui extra
-            </p>
-            <ul className="space-y-2">
-              {currentProfile.extras.map((extra) => (
-                <li key={extra} className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground">{extra}</span>
-                </li>
-              ))}
-            </ul>
-            {currentProfile.id === "estudante" && (
-              <p className="text-xs text-muted-foreground mt-3">
-                Válido mediante apresentação de cartão de estudante. Sujeito a verificação.
-              </p>
-            )}
           </div>
+        </div>
 
-          <div className="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <button
-              onClick={handleInscricao}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground hover:opacity-90 transition-all duration-300 cursor-pointer text-sm"
-            >
-              <UserPlus className="w-4 h-4" />
-              Inscrever-me
-              <ArrowRight className="w-4 h-4" />
-            </button>
-            <div className="flex items-center gap-4 text-sm">
-              <span className="text-muted-foreground">Demora menos de 1 minuto</span>
-              <a href="#programa" className="text-primary hover:underline">
-                Ver agenda
+        <div className="mb-8 rounded-2xl border border-amber-300/70 bg-amber-50 px-5 py-4 shadow-[0_10px_26px_rgba(120,53,15,0.08)]">
+          <div className="flex items-start gap-3">
+            <div className="mt-0.5 rounded-full bg-amber-100 p-2 flex-shrink-0">
+              <AlertTriangle className="w-4 h-4 text-amber-700" />
+            </div>
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.14em] text-amber-800 mb-1.5">
+                Aviso importante
+              </p>
+              <p className="text-sm text-amber-900">
+                A inscrição só é válida após boa cobrança. Em caso de muitos
+                interessados, será considerada a ordem de submissão do pedido
+                de inscrição.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="rounded-3xl border border-primary/15 bg-gradient-to-b from-white to-slate-50/70 p-4 sm:p-5 shadow-[0_18px_50px_rgba(15,23,42,0.08)]">
+          <div className="grid gap-4 lg:grid-cols-[330px_minmax(0,1fr)] lg:gap-5">
+            <aside className="rounded-2xl bg-[#10212d] p-5 text-white">
+              <p className="text-[11px] uppercase tracking-[0.16em] text-white/60 mb-2">
+                O que inclui
+              </p>
+              <h3 className="text-xl mb-4">Detalhes da participação</h3>
+
+              <ul className="space-y-2.5 mb-5">
+                {commonIncludes.map((item) => (
+                  <li key={item} className="flex items-start gap-2.5">
+                    <Check className="w-4 h-4 text-[#6be1cb] mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text-white/88">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="rounded-xl border border-white/15 bg-white/5 p-3.5">
+                <p className="text-sm text-white/90">
+                  O formulário está à direita e demora menos de 1 minuto a ser
+                  preenchido.
+                </p>
+              </div>
+
+              <a
+                href={formUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-4 py-3 text-sm text-[#10212d] hover:bg-slate-100 transition-all"
+              >
+                Abrir formulário
+                <ExternalLink className="w-4 h-4" />
               </a>
+            </aside>
+
+            <div className="rounded-2xl border border-slate-200 bg-white p-2.5 sm:p-3">
+              <div className="flex items-center justify-between px-1.5 pb-2">
+                <p className="text-xs uppercase tracking-[0.14em] text-muted-foreground">
+                  Pedido de inscrição
+                </p>
+                <span className="inline-flex items-center gap-1 text-[11px] text-primary">
+                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                  Alto Alentejo Health Innovation Summit
+                </span>
+              </div>
+              <div className="rounded-xl overflow-hidden border border-border">
+                <iframe
+                  src={formUrl}
+                  className="w-full border-0"
+                  style={{ height: "860px" }}
+                  title="Formulário de Inscrição - Alto Alentejo Health Innovation Summit"
+                  allowFullScreen
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -205,9 +142,6 @@ function RegistrationSection() {
             <div>
               <span className="text-sm text-foreground block">
                 Campo Maior
-              </span>
-              <span className="text-xs text-muted-foreground">
-                Museu de Ciência do Café
               </span>
             </div>
           </div>

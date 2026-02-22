@@ -45,7 +45,7 @@ const hubFeatures = [
 export function InnovationHubSection() {
   return (
     <section id="innovation-hub" className="py-20 md:py-28 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="site-container">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <span className="inline-block text-primary text-xs tracking-[0.2em] uppercase mb-4">

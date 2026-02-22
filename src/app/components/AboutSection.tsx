@@ -3,14 +3,15 @@ import {
   Users,
   Lightbulb,
   Heart,
-  MapPin,
-  Calendar,
   Building,
+  ExternalLink,
+  Navigation,
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 import museuImage from "../../../assets/museu.png";
-const alentejoImage = museuImage;
+import centroInvImage from "../../../assets/centroinv.png";
+import ulsAlentejoImage from "../../../assets/ulsalentejocor.png";
 
 const pillars = [
   {
@@ -38,7 +39,7 @@ const pillars = [
 export function AboutSection() {
   return (
     <section id="sobre" className="py-20 md:py-28 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="site-container">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <span className="inline-block text-primary text-xs tracking-[0.2em] uppercase mb-4">
@@ -54,14 +55,15 @@ export function AboutSection() {
           </p>
         </div>
 
-        {/* Two column: image + concept */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-10">
-          {/* Image + venue card */}
-          <div>
-            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] mb-6">
+        {/* Two column: images + concept */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch mb-10">
+          {/* Images + venue cards */}
+          <div className="space-y-4">
+            {/* Image 1 - Centro de Inteligência Competitiva */}
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
               <ImageWithFallback
-                src={alentejoImage}
-                alt="Alto Alentejo, Campo Maior"
+                src={centroInvImage}
+                alt="Centro de Inteligência Competitiva do Alentejo"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -71,69 +73,177 @@ export function AboutSection() {
                     <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Building className="w-5 h-5 text-primary" />
                     </div>
-                    <div>
+                    <div className="flex-1">
                       <p className="text-sm text-foreground">
-                        Museu de Ciência do Café
+                        Centro de Inteligência Competitiva do Alentejo
                       </p>
                       <p className="text-xs text-muted-foreground mt-0.5">
-                        Campo Maior, Alto Alentejo
+                        Campo Maior, Alentejo
+                      </p>
+                      <p className="text-xs text-primary font-medium mt-0.5">
+                        Action Labs
                       </p>
                     </div>
+                    <span className="text-xs font-semibold text-primary bg-primary/10 rounded-lg px-3 py-1.5 flex-shrink-0">
+                      Dia 20
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Quick facts */}
+            {/* Cards - Conheça o local / Como chegar (Centro Inv) */}
             <div className="grid grid-cols-2 gap-3">
-              <div className="flex items-center gap-3 bg-secondary rounded-xl px-4 py-3.5">
-                <Calendar className="w-5 h-5 text-primary flex-shrink-0" />
-                <div>
-                  <span className="text-[11px] text-muted-foreground block uppercase tracking-wider">
-                    Data
-                  </span>
-                  <span className="text-sm text-foreground">
-                    20-21 Abril 2026
-                  </span>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 bg-secondary rounded-xl px-4 py-3.5">
-                <MapPin className="w-5 h-5 text-primary flex-shrink-0" />
-                <div>
-                  <span className="text-[11px] text-muted-foreground block uppercase tracking-wider">
-                    Local
-                  </span>
-                  <span className="text-sm text-foreground">Campo Maior</span>
+              <a
+                href="https://cicalentejo.pt/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 bg-secondary rounded-xl px-4 py-3.5 hover:bg-primary/10 transition-colors group"
+              >
+                <ExternalLink className="w-5 h-5 text-primary flex-shrink-0" />
+                <span className="text-sm text-foreground group-hover:text-primary transition-colors">Conheça o local</span>
+              </a>
+              <a
+                href="https://www.google.com/maps/search/Centro+de+Intelig%C3%AAncia+Competitiva+do+Alentejo+Campo+Maior"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 bg-secondary rounded-xl px-4 py-3.5 hover:bg-primary/10 transition-colors group"
+              >
+                <Navigation className="w-5 h-5 text-primary flex-shrink-0" />
+                <span className="text-sm text-foreground group-hover:text-primary transition-colors">Como chegar</span>
+              </a>
+            </div>
+
+            {/* Image 2 - Centro de Ciência do Café */}
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
+              <ImageWithFallback
+                src={museuImage}
+                alt="Centro de Ciência do Café"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4">
+                <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                  <div className="flex items-start gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Building className="w-5 h-5 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-sm text-foreground">
+                        Centro de Ciência do Café
+                      </p>
+                      <p className="text-xs text-muted-foreground mt-0.5">
+                        Campo Maior, Alentejo
+                      </p>
+                      <p className="text-xs text-primary font-medium mt-0.5">
+                        Summit/Congresso
+                      </p>
+                    </div>
+                    <span className="text-xs font-semibold text-primary bg-primary/10 rounded-lg px-3 py-1.5 flex-shrink-0">
+                      Dia 21
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
 
+            {/* Cards - Conheça o local / Como chegar (Ciência do Café) */}
+            <div className="grid grid-cols-2 gap-3">
+              <a
+                href="https://www.centrocienciacafe.com/pt"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 bg-secondary rounded-xl px-4 py-3.5 hover:bg-primary/10 transition-colors group"
+              >
+                <ExternalLink className="w-5 h-5 text-primary flex-shrink-0" />
+                <span className="text-sm text-foreground group-hover:text-primary transition-colors">Conheça o local</span>
+              </a>
+              <a
+                href="https://www.google.com/maps/search/Centro+de+Ci%C3%AAncia+do+Caf%C3%A9+Campo+Maior"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 bg-secondary rounded-xl px-4 py-3.5 hover:bg-primary/10 transition-colors group"
+              >
+                <Navigation className="w-5 h-5 text-primary flex-shrink-0" />
+                <span className="text-sm text-foreground group-hover:text-primary transition-colors">Como chegar</span>
+              </a>
+            </div>
           </div>
 
           {/* Concept note */}
-          <div>
+          <div className="flex flex-col">
             <h3 className="text-2xl text-foreground mb-6">Nota de Conceito</h3>
             <div className="space-y-4 text-muted-foreground text-[15px]">
               <p>
-                O <strong className="text-foreground">Alto Alentejo Health Innovation Summit</strong> surge da necessidade de repensar a prestação de cuidados de saúde em territórios de baixa densidade, integrando inovação, tecnologia e novas abordagens para responder aos desafios demográficos e de acesso.
+                Inovar em saúde num território do Alentejo não é uma utopia — é a forma mais inteligente de garantir acesso, proximidade e sustentabilidade. A <strong className="text-foreground">ULS Alto Alentejo</strong> pode ser a referência nacional em inovação organizacional, social e tecnológica ao serviço das pessoas.
               </p>
               <p>
-                A iniciativa constitui um espaço de articulação entre decisores, profissionais e especialistas da área da saúde, promovendo a discussão de soluções concretas e ajustadas à realidade do interior de Portugal.
+                O Alto Alentejo enfrenta desafios estruturais próprios dos territórios de baixa densidade: envelhecimento populacional, dispersão geográfica, limitações no acesso a cuidados diferenciados e pressão crescente sobre os recursos disponíveis. Estes fatores não representam apenas constrangimentos — representam também uma oportunidade estratégica.
               </p>
               <p>
-                No primeiro dia, os{" "}
-                <strong className="text-foreground">Action Labs</strong>{" "}
-                proporcionam sessões práticas de capacitação e cocriação. No segundo dia, o{" "}
-                <strong className="text-foreground">Summit</strong> reúne oradores de referência nacional para conferências, painéis e apresentação de casos de estudo: da telessaúde à cirurgia robótica, da inovação digital à investigação clínica.
+                Num território com escala adequada, forte ligação comunitária e necessidade real de soluções integradas, é possível desenhar, testar e validar modelos inovadores com impacto mensurável. O Alto Alentejo pode afirmar-se como um verdadeiro <strong className="text-foreground">laboratório vivo de inovação em saúde</strong>, onde a transformação organizacional, a inteligência artificial aplicada, a digitalização de processos e novos modelos assistenciais são implementados com foco claro em resultados para as pessoas.
               </p>
               <p>
-                Com a presença confirmada da{" "}
-                <strong className="text-foreground">Ministra da Saúde</strong>, do{" "}
-                <strong className="text-foreground">Prof. Henrique Martins (ISCTE)</strong>{" "}
-                e de outros representantes do ecossistema de inovação em saúde, o Summit afirma-se como um momento estratégico para o futuro da saúde no Alentejo e em Portugal.
+                O <strong className="text-foreground">Alto Alentejo Health Innovation Summit</strong> nasce, assim, como um ponto de encontro estratégico, destinado a alinhar decisores, profissionais de saúde, academia, empresas tecnológicas, autarquias e comunidade em torno de uma agenda concreta:
               </p>
+              <ul className="space-y-2 pl-1">
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  Transformar a prestação de cuidados num território do interior
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  Garantir acesso com qualidade e proximidade
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  Promover sustentabilidade organizacional e ambiental
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  Posicionar a ULS Alto Alentejo como referência nacional em inovação aplicada
+                </li>
+              </ul>
             </div>
 
+            {/* Action Labs box */}
+            <div className="bg-card border border-border rounded-xl px-5 py-3 mt-auto">
+              <h4 className="text-xs tracking-[0.15em] uppercase text-primary font-semibold mb-2">
+                Action Labs (Dia 20) -  4 Eixos Práticos
+              </h4>
+              <ul className="space-y-1 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  Investigação Clínica
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  Inteligência Artificial
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  Design Thinking
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  Técnicas Avançadas Point-of-Care
+                </li>
+              </ul>
+            </div>
+
+            {/* Organização box */}
+            <div className="bg-card border border-border rounded-xl p-5 mt-4">
+              <h4 className="text-xs tracking-[0.15em] uppercase text-muted-foreground font-semibold mb-3">
+                Organização
+              </h4>
+              <div className="flex items-center gap-4">
+                <ImageWithFallback
+                  src={ulsAlentejoImage}
+                  alt="ULS do Alto Alentejo"
+                  className="h-12 w-auto object-contain"
+                />
+              </div>
+            </div>
           </div>
         </div>
 

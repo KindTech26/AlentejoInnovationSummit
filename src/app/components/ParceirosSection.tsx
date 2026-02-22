@@ -56,7 +56,7 @@ export function ParceirosSection() {
       id="parceiros"
       className="py-20 md:py-24 bg-gradient-to-b from-slate-100/80 via-slate-50 to-violet-100/30"
     >
-      <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
+      <div className="site-container">
         <div className="mx-auto max-w-3xl text-center">
           <span className="inline-block text-primary text-xs tracking-[0.24em] uppercase mb-4">
             Technologies &amp; Partners

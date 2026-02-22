@@ -56,7 +56,7 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="site-container">
         <div className="flex items-center justify-between h-16 md:h-[72px]">
           {/* Logo */}
           <button
@@ -130,7 +130,7 @@ export function Navbar() {
       {/* Mobile nav bar - appears below main nav when scrolled */}
       {isScrolled && (
         <div className="md:hidden bg-white/60 backdrop-blur-lg border-t border-black/5">
-          <div className="flex items-center justify-center px-4 py-2">
+          <div className="site-container flex items-center justify-center py-2">
             {[
               { id: "programa", label: "Programa" },
               { id: "inscricoes", label: "Inscrições" },
@@ -157,7 +157,7 @@ export function Navbar() {
       {/* Mobile menu */}
       {mobileOpen && !isScrolled && (
         <div className="md:hidden bg-white/98 backdrop-blur-lg border-t border-black/5 shadow-xl">
-          <div className="px-4 py-4 space-y-1">
+          <div className="site-container py-4 space-y-1">
             {navLinks.map((link) => (
               <button
                 key={link.id}
