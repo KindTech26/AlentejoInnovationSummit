@@ -86,14 +86,14 @@ const day2Sessions: Session[] = [
   {
     time: "09:00",
     title: "Inteligência Artificial - Desafios e Oportunidades para uma Saúde Inteligente",
-    speaker: "Maurício Alves, ULS Alto Alentejo",
+    speaker: "Maurício Alves - ULS Alto Alentejo",
     type: "keynote",
     duration: "30 min",
   },
   {
     time: "09:30",
     title: "Living Lab e a Estratégia de Inovação na ULS Alto Alentejo",
-    speaker: "Miguel Lopes, ULS Alto Alentejo",
+    speaker: "Miguel Lopes - ULS Alto Alentejo",
     type: "keynote",
     duration: "30 min",
   },
@@ -140,7 +140,7 @@ const day2Sessions: Session[] = [
   {
     time: "14:30",
     title: "Inovação Tecnológica - Cirurgia Digital e Robótica",
-    speaker: "Jorge Carvalho, ULS Santo António",
+    speaker: "Jorge Carvalho - ULS Santo António",
     moderacao: "Guilherme Fialho - ULS Alto Alentejo",
     type: "keynote",
     duration: "30 min",
@@ -156,7 +156,7 @@ const day2Sessions: Session[] = [
   {
     time: "15:30",
     title: "Inovação em Saúde Mental",
-    speaker: "Estela Bastos, Psycare | CIIASM",
+    speaker: "Estela Bastos - Psycare | CIIASM",
     moderacao: "a designar - ULS Alto Alentejo",
     type: "keynote",
     duration: "30 min",
@@ -186,7 +186,7 @@ const day2Sessions: Session[] = [
   {
     time: "18:00",
     title: "A Inovação na Saúde como Agente de Mudança das Organizações e Políticas de Saúde",
-    speaker: "Ana Paula Martins, Ministra da Saúde*",
+    speaker: "Ana Paula Martins - Ministra da Saúde*",
     type: "keynote",
     duration: "20 min",
   },
@@ -316,7 +316,7 @@ function SessionCard({ session }: { session: Session }) {
           </p>
         )}
         {session.speaker && (
-          <p className="text-primary text-xs mt-1">{session.speaker}</p>
+          <p className="text-muted-foreground text-xs mt-1">{session.speaker}</p>
         )}
         {session.formadores && (
           <p className="text-xs mt-1.5">

@@ -93,7 +93,7 @@ export function HeroSection() {
             <ImageWithFallback
               src={ulsImage}
               alt="ULS do Alto Alentejo"
-              className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+              className="h-11 sm:h-[3.25rem] md:h-[3.75rem] w-auto object-contain"
             />
           </div>
 

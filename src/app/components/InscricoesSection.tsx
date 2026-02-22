@@ -3,7 +3,6 @@ import {
   CalendarCheck,
   MapPin,
   Users,
-  AlertTriangle,
   ExternalLink,
 } from "lucide-react";
 
@@ -17,8 +16,6 @@ const commonIncludes = [
 ];
 
 function RegistrationSection() {
-  const formUrl = "https://forms.office.com/e/9NiDpwjHWZ";
-
   return (
     <section
       id="inscricoes"
@@ -43,26 +40,8 @@ function RegistrationSection() {
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/[0.08] px-3.5 py-1.5">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />
               <span className="text-xs sm:text-sm text-primary">
-                Abertura das inscrições: 1 de março
+                Abertura das inscrições: brevemente
               </span>
-            </div>
-          </div>
-        </div>
-
-        <div className="mb-8 rounded-2xl border border-amber-300/70 bg-amber-50 px-5 py-4 shadow-[0_10px_26px_rgba(120,53,15,0.08)]">
-          <div className="flex items-start gap-3">
-            <div className="mt-0.5 rounded-full bg-amber-100 p-2 flex-shrink-0">
-              <AlertTriangle className="w-4 h-4 text-amber-700" />
-            </div>
-            <div>
-              <p className="text-[11px] uppercase tracking-[0.14em] text-amber-800 mb-1.5">
-                Aviso importante
-              </p>
-              <p className="text-sm text-amber-900">
-                A inscrição só é válida após boa cobrança. Em caso de muitos
-                interessados, será considerada a ordem de submissão do pedido
-                de inscrição.
-              </p>
             </div>
           </div>
         </div>
@@ -86,20 +65,19 @@ function RegistrationSection() {
 
               <div className="rounded-xl border border-white/15 bg-white/5 p-3.5">
                 <p className="text-sm text-white/90">
-                  O formulário está à direita e demora menos de 1 minuto a ser
-                  preenchido.
+                  O formulário de inscrição ficará disponível em breve nesta
+                  página.
                 </p>
               </div>
 
-              <a
-                href={formUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-4 py-3 text-sm text-[#10212d] hover:bg-slate-100 transition-all"
+              <button
+                type="button"
+                disabled
+                className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white/70 px-4 py-3 text-sm text-[#10212d]/70 cursor-not-allowed"
               >
-                Abrir formulário
+                Formulário brevemente
                 <ExternalLink className="w-4 h-4" />
-              </a>
+              </button>
             </aside>
 
             <div className="rounded-2xl border border-slate-200 bg-white p-2.5 sm:p-3">
@@ -113,13 +91,20 @@ function RegistrationSection() {
                 </span>
               </div>
               <div className="rounded-xl overflow-hidden border border-border">
-                <iframe
-                  src={formUrl}
-                  className="w-full border-0"
-                  style={{ height: "860px" }}
-                  title="Formulário de Inscrição - Alto Alentejo Health Innovation Summit"
-                  allowFullScreen
-                />
+                <div className="h-[860px] bg-slate-50 flex items-center justify-center px-6 text-center">
+                  <div className="max-w-md">
+                    <p className="text-[11px] uppercase tracking-[0.14em] text-primary mb-3">
+                      Em preparação
+                    </p>
+                    <h4 className="text-xl text-foreground mb-2">
+                      Abertura das inscrições: brevemente
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Esta área manterá a mesma estrutura e o formulário será
+                      disponibilizado aqui assim que as inscrições abrirem.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
