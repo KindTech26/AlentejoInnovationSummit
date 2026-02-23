@@ -97,12 +97,17 @@ export function InnovationHubSection() {
                 <p className="text-sm text-foreground mb-1">
                   Quer participar no innovation hub?
                 </p>
-                <a
-                  href="mailto:mauricio.alves@ulsaale.min-saude.pt"
-                  className="text-sm text-primary hover:underline"
-                >
-                  mauricio.alves@ulsaale.min-saude.pt
-                </a>
+                <details className="text-sm">
+                  <summary className="cursor-pointer text-primary hover:underline">
+                    Ver email
+                  </summary>
+                  <a
+                    href="mailto:mauricio.alves@ulsaale.min-saude.pt"
+                    className="mt-2 block text-primary hover:underline"
+                  >
+                    mauricio.alves@ulsaale.min-saude.pt
+                  </a>
+                </details>
               </div>
 
             </div>
