@@ -1,7 +1,7 @@
 import { Cpu, Stethoscope, Wifi, Brain, FlaskConical, Rocket } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
-import hubImage from "../../../assets/hub.png";
+import hubImage from "../../../dist/assets/hub-Dm3wqk0N.png";
 
 const hubFeatures = [
   {
@@ -92,6 +92,17 @@ export function InnovationHubSection() {
                   alt="Innovation Hub"
                   className="w-full h-full object-cover"
                 />
+              </div>
+              <div className="rounded-xl border border-border bg-card p-4">
+                <p className="text-sm text-foreground mb-1">
+                  Quer participar no innovation hub?
+                </p>
+                <a
+                  href="mailto:mauricio.alves@ulsaale.min-saude.pt"
+                  className="text-sm text-primary hover:underline"
+                >
+                  mauricio.alves@ulsaale.min-saude.pt
+                </a>
               </div>
 
             </div>

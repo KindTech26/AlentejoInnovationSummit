@@ -1,6 +1,7 @@
 import { Mail, MapPin, Facebook, Linkedin } from "lucide-react";
 import kindtechLogo from "../../../assets/kindtech.png";
 import tituloEventoBranco from "../../../assets/tituloeventobranco.png";
+import ulsImageSrc from "../../../assets/ULS.png";
 
 const navLinks = [
   { id: "sobre", label: "O Evento" },
@@ -87,27 +88,31 @@ export function Footer() {
             </h4>
             <div className="space-y-3">
               <a
-                href="mailto:info@aahis.pt"
+                href="mailto:eventos@ulsaale.min-saude.p"
                 className="flex items-center gap-2.5 text-sm text-white/50 hover:text-white transition-colors"
               >
                 <Mail className="w-4 h-4 flex-shrink-0" />
-                info@aahis.pt
+                eventos@ulsaale.min-saude.p
               </a>
               <div className="flex items-center gap-2.5 text-sm text-white/50">
                 <MapPin className="w-4 h-4 flex-shrink-0" />
-                <span>
-                  Museu de Ciência do Café
-                  <br />
-                  Campo Maior, Alto Alentejo
-                </span>
+                <span>Campo Maior</span>
               </div>
             </div>
 
             <div className="mt-6 p-3 bg-white/5 border border-white/10 rounded-lg">
-              <p className="text-[11px] text-white/40 uppercase tracking-wider mb-1">
-                Organização
-              </p>
-              <p className="text-xs text-white/60">ULS do Alto Alentejo</p>
+              <a
+                href="https://www.ulsaale.min-saude.pt"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block hover:opacity-90 transition-opacity"
+              >
+                <img
+                  src={ulsImageSrc}
+                  alt="ULS Alto Alentejo"
+                  className="h-16 w-auto"
+                />
+              </a>
             </div>
           </div>
         </div>
