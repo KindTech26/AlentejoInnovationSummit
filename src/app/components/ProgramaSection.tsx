@@ -128,7 +128,7 @@ const day2Sessions: Session[] = [
     speaker: "Cátia Sousa Pinto - SPMS, Joana Seringa - ENSP e Rui Cunha - ASKLEPIC",
     description: "Utilização de dados, inovação e a saúde das pessoas.",
     moderacao: "André Gomes - ULS Alto Alentejo",
-    type: "keynote",
+    type: "panel",
     duration: "60 min",
   },
   {
@@ -150,7 +150,7 @@ const day2Sessions: Session[] = [
     title: "Estratégias de Financiamento da Inovação em Territórios de Baixa Densidade",
     speaker: "Carla Pereira - SINASE, João Transmontano - FINAO BIOTECH*",
     moderacao: "a designar - ULS Alto Alentejo",
-    type: "case",
+    type: "keynote",
     duration: "30 min",
   },
   {
@@ -165,7 +165,7 @@ const day2Sessions: Session[] = [
     time: "16:00",
     title: "A Inovação como Trigger para a Investigação Clínica",
     speaker: "Helena Canhão - Secretária de Estado da Ciência e Inovação*, Firmino Machado - UA, Teresa Luciano - ULS São José",
-    moderacao: "Érica Cardoso - ULS Alto Alentejo",
+    moderacao: "Erica Cardoso - ULS Alto Alentejo",
     type: "panel",
     duration: "60 min",
   },
