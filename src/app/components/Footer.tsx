@@ -85,6 +85,7 @@ export function Footer() {
               >
                 <Mail className="w-4 h-4 flex-shrink-0" />
                 eventos@ulsaale.min-saude.p
+<<<<<<< HEAD
               </a>
               <a
                 href="mailto:admin@ulsaale.min-saude.pt"
@@ -92,6 +93,8 @@ export function Footer() {
               >
                 <Mail className="w-4 h-4 flex-shrink-0" />
                 admin@ulsaale.min-saude.pt
+=======
+>>>>>>> humberto2
               </a>
               <div className="flex items-center gap-2.5 text-sm text-white/50">
                 <MapPin className="w-4 h-4 flex-shrink-0" />

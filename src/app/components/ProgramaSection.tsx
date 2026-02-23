@@ -149,8 +149,13 @@ const day2Sessions: Session[] = [
     time: "15:00",
     title: "Estratégias de Financiamento da Inovação em Territórios de Baixa Densidade",
     speaker: "Carla Pereira - SINASE, João Transmontano - FINAO BIOTECH*",
+<<<<<<< HEAD
     moderacao: "a designar - ULS Alto Alentejo",
     type: "keynote",
+=======
+    moderacao: "Ana Amélia Silva, ULS Alto Alentejo",
+    type: "case",
+>>>>>>> humberto2
     duration: "30 min",
   },
   {
@@ -175,7 +180,7 @@ const day2Sessions: Session[] = [
     moderacao: "André Neto de Oliveira - CNN Portugal*",
     bullets: [
       "Manuel Dias - CTO/ARTE*",
-      "José Paulo - CEO HOPECARE*",
+      "José Paulo - CEO HOPECARE",
       "Luís Loures - Politécnico de Portalegre*",
       "Miguel Lopes - ULS Alto Alentejo",
     ],
@@ -354,6 +359,7 @@ function SessionCard({ session }: { session: Session }) {
 
 export function ProgramaSection() {
   const [activeDay, setActiveDay] = useState<1 | 2>(2);
+  const showPdfDownload = false;
 
   const handleDownload = () => {
     const doc = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" });
@@ -631,13 +637,15 @@ export function ProgramaSection() {
 
           {/* Action buttons */}
           <div className="flex gap-2">
-            <button
-              onClick={handleDownload}
-              className="flex items-center gap-2 px-4 py-2.5 bg-primary text-primary-foreground rounded-xl hover:opacity-90 transition-all cursor-pointer text-sm"
-            >
-              <Download className="w-4 h-4" />
-              <span className="hidden sm:inline">Descarregar</span> PDF
-            </button>
+            {showPdfDownload && (
+              <button
+                onClick={handleDownload}
+                className="flex items-center gap-2 px-4 py-2.5 bg-primary text-primary-foreground rounded-xl hover:opacity-90 transition-all cursor-pointer text-sm"
+              >
+                <Download className="w-4 h-4" />
+                <span className="hidden sm:inline">Descarregar</span> PDF
+              </button>
+            )}
             <button
               onClick={handleShare}
               className="flex items-center gap-2 px-4 py-2.5 bg-card border border-border text-foreground rounded-xl hover:bg-accent transition-all cursor-pointer text-sm"
