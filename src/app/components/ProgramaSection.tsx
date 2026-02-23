@@ -11,6 +11,11 @@ import {
   Beaker,
   ChevronRight,
   Wine,
+  Facebook,
+  Linkedin,
+  Mail,
+  Link2,
+  X,
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
@@ -566,17 +571,29 @@ export function ProgramaSection() {
     doc.save("Programa_AAHIS_2026.pdf");
   };
 
-  const handleShare = () => {
-    if (navigator.share) {
-      navigator.share({
-        title: "Programa  - Alto Alentejo Health Innovation Summit",
-        text: "Consulte o programa do AAHIS 2026",
-        url: window.location.href + "#programa",
-      });
-    } else {
-      navigator.clipboard.writeText(window.location.href + "#programa");
-      alert("Link do programa copiado para a área de transferência!");
-    }
+  const [shareOpen, setShareOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const programUrl = "https://ulsaltoalentejoeventos.pt";
+  const shareTitle = "Programa - Alto Alentejo Health Innovation Summit 2026";
+  const shareText = "Consulta o programa do Alto Alentejo Health Innovation Summit 2026 — 20 e 21 de Abril, Campo Maior.";
+
+  const shareToFacebook = () => {
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(programUrl)}&quote=${encodeURIComponent(shareText)}`, "_blank");
+  };
+  const shareToLinkedIn = () => {
+    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(programUrl)}`, "_blank");
+  };
+  const shareToTwitter = () => {
+    window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(programUrl)}&text=${encodeURIComponent(shareText)}`, "_blank");
+  };
+  const shareByEmail = () => {
+    window.open(`mailto:?subject=${encodeURIComponent(shareTitle)}&body=${encodeURIComponent(`${shareText}\n\n${programUrl}`)}`, "_blank");
+  };
+  const copyLink = () => {
+    navigator.clipboard.writeText(programUrl);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   const sessions = activeDay === 1 ? day1Sessions : day2Sessions;
@@ -641,13 +658,70 @@ export function ProgramaSection() {
                 <span className="hidden sm:inline">Descarregar</span> PDF
               </button>
             )}
-            <button
-              onClick={handleShare}
-              className="flex items-center gap-2 px-4 py-2.5 bg-card border border-border text-foreground rounded-xl hover:bg-accent transition-all cursor-pointer text-sm"
-            >
-              <Share2 className="w-4 h-4" />
-              Partilhar
-            </button>
+            <div className="relative">
+              <button
+                onClick={() => setShareOpen(!shareOpen)}
+                className="flex items-center gap-2 px-4 py-2.5 bg-card border border-border text-foreground rounded-xl hover:bg-accent transition-all cursor-pointer text-sm"
+              >
+                <Share2 className="w-4 h-4" />
+                Partilhar
+              </button>
+
+              {shareOpen && (
+                <div className="absolute top-full mt-3 right-0 bg-white rounded-2xl shadow-2xl border border-black/5 p-2 min-w-[240px] z-50">
+                  <div className="flex items-center justify-between px-3 py-2 mb-1">
+                    <span className="text-xs text-muted-foreground tracking-wide uppercase">
+                      Partilhar via
+                    </span>
+                    <button
+                      onClick={() => setShareOpen(false)}
+                      className="text-muted-foreground hover:text-foreground cursor-pointer"
+                    >
+                      <X className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                  <button
+                    onClick={shareToFacebook}
+                    className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-foreground hover:bg-muted transition-colors cursor-pointer text-sm"
+                  >
+                    <Facebook className="w-4 h-4 text-[#1877F2]" />
+                    Facebook
+                  </button>
+                  <button
+                    onClick={shareToLinkedIn}
+                    className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-foreground hover:bg-muted transition-colors cursor-pointer text-sm"
+                  >
+                    <Linkedin className="w-4 h-4 text-[#0A66C2]" />
+                    LinkedIn
+                  </button>
+                  <button
+                    onClick={shareToTwitter}
+                    className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-foreground hover:bg-muted transition-colors cursor-pointer text-sm"
+                  >
+                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                    X (Twitter)
+                  </button>
+                  <button
+                    onClick={shareByEmail}
+                    className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-foreground hover:bg-muted transition-colors cursor-pointer text-sm"
+                  >
+                    <Mail className="w-4 h-4 text-muted-foreground" />
+                    Email
+                  </button>
+                  <div className="border-t border-border mt-1 pt-1">
+                    <button
+                      onClick={copyLink}
+                      className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-foreground hover:bg-muted transition-colors cursor-pointer text-sm"
+                    >
+                      <Link2 className="w-4 h-4 text-muted-foreground" />
+                      {copied ? "Link copiado!" : "Copiar link"}
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 

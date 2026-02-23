@@ -20,14 +20,13 @@ export function HeroSection() {
   const [shareOpen, setShareOpen] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  const eventUrl = typeof window !== "undefined" ? window.location.href : "";
+  const eventUrl = "https://ulsaltoalentejoeventos.pt";
   const eventTitle = "Alto Alentejo Health Innovation Summit 2026";
-  const eventDescription =
-    "20-21 Abril 2026 | Campo Maior, Alto Alentejo | Inovação, Saúde e Território";
+  const shareText = "Alto Alentejo Health Innovation Summit 2026 — 20 e 21 de Abril, Campo Maior. Inscrições abertas!";
 
   const shareToFacebook = () => {
     window.open(
-      `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(eventUrl)}`,
+      `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(eventUrl)}&quote=${encodeURIComponent(shareText)}`,
       "_blank"
     );
   };
@@ -41,7 +40,7 @@ export function HeroSection() {
 
   const shareToTwitter = () => {
     window.open(
-      `https://twitter.com/intent/tweet?url=${encodeURIComponent(eventUrl)}&text=${encodeURIComponent(eventTitle + " | " + eventDescription)}`,
+      `https://twitter.com/intent/tweet?url=${encodeURIComponent(eventUrl)}&text=${encodeURIComponent(shareText)}`,
       "_blank"
     );
   };
@@ -49,7 +48,7 @@ export function HeroSection() {
   const shareByEmail = () => {
     window.open(
       `mailto:?subject=${encodeURIComponent(eventTitle)}&body=${encodeURIComponent(
-        `${eventDescription}\n\nMais informacoes: ${eventUrl}`
+        `${shareText}\n\n${eventUrl}`
       )}`
     );
   };
