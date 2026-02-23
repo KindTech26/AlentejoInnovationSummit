@@ -80,12 +80,11 @@ export function Footer() {
             </h4>
             <div className="space-y-3">
               <a
-                href="mailto:eventos@ulsaale.min-saude.p"
+                href="mailto:eventos@ulsaale.min-saude.pt"
                 className="flex items-center gap-2.5 text-sm text-white/50 hover:text-white transition-colors"
               >
                 <Mail className="w-4 h-4 flex-shrink-0" />
-                eventos@ulsaale.min-saude.p
-<<<<<<< HEAD
+                eventos@ulsaale.min-saude.pt
               </a>
               <a
                 href="mailto:admin@ulsaale.min-saude.pt"
@@ -93,8 +92,6 @@ export function Footer() {
               >
                 <Mail className="w-4 h-4 flex-shrink-0" />
                 admin@ulsaale.min-saude.pt
-=======
->>>>>>> humberto2
               </a>
               <div className="flex items-center gap-2.5 text-sm text-white/50">
                 <MapPin className="w-4 h-4 flex-shrink-0" />

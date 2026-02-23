@@ -149,13 +149,8 @@ const day2Sessions: Session[] = [
     time: "15:00",
     title: "Estratégias de Financiamento da Inovação em Territórios de Baixa Densidade",
     speaker: "Carla Pereira - SINASE, João Transmontano - FINAO BIOTECH*",
-<<<<<<< HEAD
-    moderacao: "a designar - ULS Alto Alentejo",
-    type: "keynote",
-=======
     moderacao: "Ana Amélia Silva, ULS Alto Alentejo",
     type: "case",
->>>>>>> humberto2
     duration: "30 min",
   },
   {
