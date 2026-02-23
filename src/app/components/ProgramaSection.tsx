@@ -150,7 +150,7 @@ const day2Sessions: Session[] = [
     title: "Estratégias de Financiamento da Inovação em Territórios de Baixa Densidade",
     speaker: "Carla Pereira - SINASE, João Transmontano - FINAO BIOTECH*",
     moderacao: "Ana Amélia Silva, ULS Alto Alentejo",
-    type: "case",
+    type: "panel",
     duration: "30 min",
   },
   {
@@ -187,7 +187,7 @@ const day2Sessions: Session[] = [
     time: "18:00",
     title: "A Inovação na Saúde como Agente de Mudança das Organizações e Políticas de Saúde",
     speaker: "Ana Paula Martins - Ministra da Saúde*",
-    type: "keynote",
+    type: "institutional",
     duration: "20 min",
   },
   {
