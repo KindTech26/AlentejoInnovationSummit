@@ -169,8 +169,12 @@ const day2Sessions: Session[] = [
   {
     time: "16:00",
     title: "A Inovação como Trigger para a Investigação Clínica",
-    speaker: "Helena Canhão - Secretária de Estado da Ciência e Inovação*, Firmino Machado - UA, Teresa Luciano - ULS São José",
-    moderacao: "Erica Cardoso - ULS Alto Alentejo",
+    bullets: [
+      "Helena Canhão - Secretária de Estado da Ciência e Inovação*",
+      "Firmino Machado - UA",
+      "Teresa Luciano - ULS São José",
+    ],
+    moderacao: "Érica Cardoso - ULS Alto Alentejo",
     type: "panel",
     duration: "60 min",
   },
@@ -183,6 +187,7 @@ const day2Sessions: Session[] = [
       "José Paulo - CEO HOPECARE",
       "Luís Loures - Politécnico de Portalegre*",
       "Miguel Lopes - ULS Alto Alentejo",
+      "Ricardo Pinheiro - Presidente CCDR Alentejo",
     ],
     type: "panel",
     duration: "60 min",
