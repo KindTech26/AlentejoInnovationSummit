@@ -6,6 +6,8 @@ type PartnerLogo = {
 };
 
 const partnerUrls: Record<string, string> = {
+  "centrocienciadocafé": "https://www.centrocienciacafe.com/pt",
+  "cicalentejo": "https://cicalentejo.pt/",
   "1668509294155 rgb iscte pt vertical positive proxy": "https://www.iscte-iul.pt/",
   "aibili logo": "https://www.aibili.pt/",
   "arte gov pt logo": "https://www.arte.gov.pt/",
@@ -16,11 +18,14 @@ const partnerUrls: Record<string, string> = {
   "images 3": "https://www.ulssjose.min-saude.pt/" ,
   "images": "https://www.cm-campo-maior.pt/" ,
   "kindtech": "https://kindtech.pt/",
+  "labtomarket": "https://labtomarket.eu",
   "logo lusiadas": "https://www.lusiadas.pt/",
   "logo Hope Care": "https://hope-care.pt/",
+  "nobox logo1": "https://nobox.pt/",
   "pportalegreversao principal 01": "https://www.ipportalegre.pt/",
   "psy": "https://psydevplaceholder.pages.dev",
   "ulsnaale logo": "https://www.ulsaale.min-saude.pt/",
+  "visualthinking bi logo": "https://www.visual-thinking.pt",
 };
 
 const partnersFromAssets = Object.entries(
