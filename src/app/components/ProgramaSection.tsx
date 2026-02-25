@@ -67,7 +67,7 @@ const day1Sessions: Session[] = [
     type: "workshop",
     duration: "7h",
     seats: "30 lugares",
-    formadores: "a confirmar",
+    formadores: "Alberto Silva e Ana Oliveira - NOBOX",
   },
   {
     time: "09:00",
@@ -118,7 +118,7 @@ const day2Sessions: Session[] = [
   {
     time: "11:00",
     title: "Intervenções Inovadoras de Saúde Digital",
-    moderacao: "a designar",
+    moderacao: "Rafael Franco - SPMS*",
     bullets: [
       { title: "Telessaúde - Caso de Estudo", speaker: "Neuza Reis e Ana Isabel, ULS São José" },
       { title: "Telemonitorização - Caso de Estudo", speaker: "Sílvio Almeida, ULS Entre Douro e Vouga" },
@@ -171,7 +171,8 @@ const day2Sessions: Session[] = [
     title: "A Inovação como Trigger para a Investigação Clínica",
     bullets: [
       "Helena Canhão - Secretária de Estado da Ciência e Inovação*",
-      "Firmino Machado - UA",
+      "Firmino Machado - ULS Gaia-Espinho*",
+      "Paulo Ferreira - Politécnico de Portalegre*",
       "Teresa Luciano - ULS São José",
     ],
     moderacao: "Érica Cardoso - ULS Alto Alentejo",
