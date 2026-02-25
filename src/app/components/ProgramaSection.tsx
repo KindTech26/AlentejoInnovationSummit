@@ -71,11 +71,8 @@ const day1Sessions: Session[] = [
     duration: "7h",
     seats: "30 lugares",
     formadores: "Alberto Silva e Ana Oliveira - NOBOX",
-<<<<<<< HEAD
-=======
     logoSrc: noboxLogo,
     logoAlt: "Logótipo da NOBOX",
->>>>>>> humberto3
   },
   {
     time: "09:00",
@@ -179,12 +176,7 @@ const day2Sessions: Session[] = [
     title: "A Inovação como Trigger para a Investigação Clínica",
     bullets: [
       "Helena Canhão - Secretária de Estado da Ciência e Inovação*",
-<<<<<<< HEAD
-      "Firmino Machado - ULS Gaia-Espinho*",
-      "Paulo Ferreira - Politécnico de Portalegre*",
-=======
       "Alexandre Martins - Politécnico de Portalegre",
->>>>>>> humberto3
       "Teresa Luciano - ULS São José",
     ],
     moderacao: "Érica Cardoso - ULS Alto Alentejo",

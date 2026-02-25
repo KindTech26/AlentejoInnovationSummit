@@ -1,7 +1,7 @@
 import { Cpu, Stethoscope, Wifi, Brain, FlaskConical, Rocket } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
-import hubImage from "../../../dist/assets/hub-Dm3wqk0N.png";
+import hubImage from "../../../assets/hub.png";
 
 const hubFeatures = [
   {
