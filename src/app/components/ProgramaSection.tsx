@@ -20,6 +20,7 @@ import {
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 import programaImage from "../../../assets/programa.png";
+import noboxLogo from "../../../assets/parceiros/nobox_logo1.png";
 const conferenceImage = programaImage;
 
 type SessionType = "keynote" | "panel" | "break" | "case" | "workshop" | "institutional" | "closing";
@@ -36,6 +37,8 @@ interface Session {
   seats?: string;
   formadores?: string;
   moderacao?: string;
+  logoSrc?: string;
+  logoAlt?: string;
 }
 
 const day1Sessions: Session[] = [
@@ -68,6 +71,11 @@ const day1Sessions: Session[] = [
     duration: "7h",
     seats: "30 lugares",
     formadores: "Alberto Silva e Ana Oliveira - NOBOX",
+<<<<<<< HEAD
+=======
+    logoSrc: noboxLogo,
+    logoAlt: "Logótipo da NOBOX",
+>>>>>>> humberto3
   },
   {
     time: "09:00",
@@ -171,8 +179,12 @@ const day2Sessions: Session[] = [
     title: "A Inovação como Trigger para a Investigação Clínica",
     bullets: [
       "Helena Canhão - Secretária de Estado da Ciência e Inovação*",
+<<<<<<< HEAD
       "Firmino Machado - ULS Gaia-Espinho*",
       "Paulo Ferreira - Politécnico de Portalegre*",
+=======
+      "Alexandre Martins - Politécnico de Portalegre",
+>>>>>>> humberto3
       "Teresa Luciano - ULS São José",
     ],
     moderacao: "Érica Cardoso - ULS Alto Alentejo",
@@ -334,6 +346,11 @@ function SessionCard({ session }: { session: Session }) {
             <span className="text-foreground/70 font-medium">Formadores:</span>{" "}
             <span className="text-muted-foreground">{session.formadores}</span>
           </p>
+        )}
+        {session.logoSrc && (
+          <div className="mt-2 inline-flex items-center rounded-lg border border-slate-200/80 bg-white/85 px-2.5 py-1.5">
+            <img src={session.logoSrc} alt={session.logoAlt ?? "Logótipo"} className="h-5 w-auto object-contain" />
+          </div>
         )}
         {session.bullets && (
           <ul className="mt-2 space-y-1.5">
