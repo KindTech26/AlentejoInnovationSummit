@@ -40,7 +40,7 @@ function RegistrationSection() {
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/[0.08] px-3.5 py-1.5">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />
               <span className="text-xs sm:text-sm text-primary">
-                Abertura das inscrições: brevemente
+                Abertura das inscrições: 3 de Março
               </span>
             </div>
           </div>
@@ -65,7 +65,7 @@ function RegistrationSection() {
 
               <div className="rounded-xl border border-white/15 bg-white/5 p-3.5">
                 <p className="text-sm text-white/90">
-                  O formulário de inscrição ficará disponível em breve nesta
+                  O formulário de inscrição ficará disponível a 3 de Março nesta
                   página.
                 </p>
               </div>
@@ -75,7 +75,7 @@ function RegistrationSection() {
                 disabled
                 className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white/70 px-4 py-3 text-sm text-[#10212d]/70 cursor-not-allowed"
               >
-                Formulário brevemente
+                Formulário disponível a 3 de Março
                 <ExternalLink className="w-4 h-4" />
               </button>
             </aside>
@@ -97,7 +97,7 @@ function RegistrationSection() {
                       Em preparação
                     </p>
                     <h4 className="text-xl text-foreground mb-2">
-                      Abertura das inscrições: brevemente
+                      Abertura das inscrições: 3 de Março
                     </h4>
                     <p className="text-sm text-muted-foreground">
                       Esta área manterá a mesma estrutura e o formulário será

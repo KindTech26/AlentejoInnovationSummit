@@ -21,6 +21,13 @@ import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 import programaImage from "../../../assets/programa.png";
 import noboxLogo from "../../../assets/parceiros/nobox_logo1.png";
+import carelogo from "../../../assets/workshops/carelogo.png";
+import promptlyLogo from "../../../assets/workshops/promptly.png";
+import ulsSaoJoseLogo from "../../../assets/workshops/ULSSaoJose.png";
+import ulsAltoAlentejoLogo from "../../../assets/workshops/ULSAltoAlentejo.png";
+import hcLogo from "../../../assets/workshops/HC.png";
+import visualLogo from "../../../assets/workshops/visual.png";
+import daylifeLogo from "../../../assets/workshops/daylife.png";
 const conferenceImage = programaImage;
 
 type SessionType = "keynote" | "panel" | "break" | "case" | "workshop" | "institutional" | "closing";
@@ -39,6 +46,7 @@ interface Session {
   moderacao?: string;
   logoSrc?: string;
   logoAlt?: string;
+  logos?: { src: string; alt: string; className?: string }[];
 }
 
 const day1Sessions: Session[] = [
@@ -50,7 +58,12 @@ const day1Sessions: Session[] = [
     type: "workshop",
     duration: "7h",
     seats: "30 lugares",
-    formadores: "a designar, CARE IPP e Teresa Luciano - ULS São José",
+    formadores: "Alexandre Martins - CARE IPP, a designar - Promptly e Teresa Luciano - ULS São José",
+    logos: [
+      { src: carelogo, alt: "CARE IPP" },
+      { src: promptlyLogo, alt: "Promptly", className: "h-10" },
+      { src: ulsSaoJoseLogo, alt: "ULS São José" },
+    ],
   },
   {
     time: "09:00",
@@ -61,6 +74,11 @@ const day1Sessions: Session[] = [
     duration: "7h",
     seats: "40 lugares",
     formadores: "Maurício Alves - ULS Alto Alentejo, Hélder Palheira - HC Healthcare e Rafael Pinto - Visual Thinking",
+    logos: [
+      { src: ulsAltoAlentejoLogo, alt: "ULS Alto Alentejo" },
+      { src: hcLogo, alt: "HC Healthcare", className: "h-8" },
+      { src: visualLogo, alt: "Visual Thinking", className: "h-12" },
+    ],
   },
   {
     time: "09:00",
@@ -71,8 +89,9 @@ const day1Sessions: Session[] = [
     duration: "7h",
     seats: "30 lugares",
     formadores: "Alberto Silva e Ana Oliveira - NOBOX",
-    logoSrc: noboxLogo,
-    logoAlt: "Logótipo da NOBOX",
+    logos: [
+      { src: noboxLogo, alt: "NOBOX", className: "h-3" },
+    ],
   },
   {
     time: "09:00",
@@ -83,6 +102,10 @@ const day1Sessions: Session[] = [
     duration: "7h",
     seats: "20 lugares",
     formadores: "Cláudia Ribeiro - Daylife e Beatriz Mourato - ULS Alto Alentejo",
+    logos: [
+      { src: daylifeLogo, alt: "Daylife" },
+      { src: ulsAltoAlentejoLogo, alt: "ULS Alto Alentejo" },
+    ],
   },
 ];
 
@@ -142,7 +165,7 @@ const day2Sessions: Session[] = [
   {
     time: "12:00",
     title: "Como Inovar com Impacto na Saúde Pública?",
-    speaker: "Opening 15' - David Magboulé - Labtomarket, Cátia Sousa Pinto - SPMS* e Rui Cunha - ASKLEPIC*",
+    speaker: "Opening 15' - David Magboulé - Labtomarket, Cátia Sousa Pinto - SPMS*, Joana Seringa - ENSP e Rui Cunha - ASKLEPIC*",
     description: "Utilização de dados, inovação e a saúde das pessoas.",
     moderacao: "André Gomes - ULS Alto Alentejo",
     type: "panel",
@@ -347,7 +370,14 @@ function SessionCard({ session }: { session: Session }) {
             <span className="text-muted-foreground">{session.formadores}</span>
           </p>
         )}
-        {session.logoSrc && (
+        {session.logos && session.logos.length > 0 && (
+          <div className="mt-2 inline-flex items-center justify-center gap-3 rounded-lg border border-slate-200/80 bg-white/85 px-2.5 h-[60px]">
+            {session.logos.map((logo, i) => (
+              <img key={i} src={logo.src} alt={logo.alt} className={`${logo.className ?? "h-5"} w-auto object-contain`} />
+            ))}
+          </div>
+        )}
+        {session.logoSrc && !session.logos && (
           <div className="mt-2 inline-flex items-center rounded-lg border border-slate-200/80 bg-white/85 px-2.5 py-1.5">
             <img src={session.logoSrc} alt={session.logoAlt ?? "Logótipo"} className="h-5 w-auto object-contain" />
           </div>
