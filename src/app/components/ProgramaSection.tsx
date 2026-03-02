@@ -206,8 +206,8 @@ const day2Sessions: Session[] = [
     time: "16:00",
     title: "A Inovação como Trigger para a Investigação Clínica",
     bullets: [
-      "Adrian Llerena (opening 15')",
-      "Helena Canhão - Secretária de Estado da Ciência e Inovação*",
+      "Hele Canhão - Secretária de Estado da Ciência e Inovação*",
+      "Adrian Llerena - Scientific Director of INUBE Institute for Biosanitary Research of Extremadura/SES Extremadura Health Service and UEx",
       "a confirmar - Politécnico de Portalegre",
       "Teresa Luciano - ULS São José",
       "Manuel Lopes - Universidade de Évora",
