@@ -70,7 +70,7 @@ function RegistrationSection() {
 
               <div className="rounded-xl border border-emerald-400/30 bg-emerald-500/10 p-3.5">
                 <p className="text-sm text-white/95">
-                  Formulário de inscrição disponível.
+                  Disponivel ás 9:00h do dia 3 de março.
                 </p>
               </div>
             </aside>
