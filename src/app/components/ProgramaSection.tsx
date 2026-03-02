@@ -76,6 +76,7 @@ const day1Sessions: Session[] = [
     formadores: "Maurício Alves - ULS Alto Alentejo, Hélder Palheira - HC Healthcare e Rafael Pinto - Visual Thinking",
     logos: [
       { src: ulsAltoAlentejoLogo, alt: "ULS Alto Alentejo" },
+      { src: promptlyLogo, alt: "Promptly", className: "h-10" },
       { src: hcLogo, alt: "HC Healthcare", className: "h-8" },
       { src: visualLogo, alt: "Visual Thinking", className: "h-12" },
     ],
@@ -125,8 +126,8 @@ const day2Sessions: Session[] = [
   },
   {
     time: "09:20",
-    title: "Living Lab e a Estratégia de Inovação na ULS Alto Alentejo",
-    speaker: "Miguel Lopes - ULS Alto Alentejo",
+    title: "Transformação digital com Inteligência (Artificial)",
+    speaker: "Confirmado",
     type: "keynote",
     duration: "20 min",
   },
@@ -165,7 +166,7 @@ const day2Sessions: Session[] = [
   {
     time: "12:00",
     title: "Como Inovar com Impacto na Saúde Pública?",
-    speaker: "Opening 15' - David Magboulé - Labtomarket, Cátia Sousa Pinto - SPMS*, Joana Seringa - ENSP e Rui Cunha - ASKLEPIC*",
+    speaker: "Opening 15' - David Magboulé - Labtomarket, Cátia Sousa Pinto - SPMS*, Joana Seringa - ENSP e Rui Cunha - ASKLEPIC* (confirmado)",
     description: "Utilização de dados, inovação e a saúde das pessoas.",
     moderacao: "André Gomes - ULS Alto Alentejo",
     type: "panel",
@@ -205,10 +206,10 @@ const day2Sessions: Session[] = [
     time: "16:00",
     title: "A Inovação como Trigger para a Investigação Clínica",
     bullets: [
+      "Adrian Llerena (opening 15')",
       "Helena Canhão - Secretária de Estado da Ciência e Inovação*",
       "a confirmar - Politécnico de Portalegre",
       "Teresa Luciano - ULS São José",
-      "Ana Bento - Luz Saúde",
       "Manuel Lopes - Universidade de Évora",
     ],
     moderacao: "Érica Cardoso - ULS Alto Alentejo",
@@ -217,7 +218,7 @@ const day2Sessions: Session[] = [
   },
   {
     time: "17:00",
-    title: "O Papel de Cada Agente no Ecossistema de Inovação em Saúde",
+    title: "Dimensões do ecossistema de inovação em saúde",
     moderacao: "André Neto de Oliveira - CNN Portugal*",
     bullets: [
       "José Paulo - CEO HOPECARE",

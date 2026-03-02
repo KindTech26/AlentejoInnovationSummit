@@ -19,10 +19,13 @@ const partnerUrls: Record<string, string> = {
   "images": "https://www.cm-campo-maior.pt/" ,
   "kindtech": "https://kindtech.pt/",
   "labtomarket": "https://labtomarket.eu",
+  "lean": "https://leanhealth.education",
   "logo lusiadas": "https://www.lusiadas.pt/",
   "logo Hope Care": "https://hope-care.pt/",
   "nobox logo1": "https://nobox.pt/",
   "pportalegreversao principal 01": "https://www.ipportalegre.pt/",
+  "daylife": "https://daylife.pt",
+  "promptly": "https://promptlyhealth.com/pt",
   "psy": "https://psydevplaceholder.pages.dev",
   "ulsnaale logo": "https://www.ulsaale.min-saude.pt/",
   "visualthinking bi logo": "https://www.visual-thinking.pt",
@@ -30,6 +33,13 @@ const partnerUrls: Record<string, string> = {
 
 const partnersFromAssets = Object.entries(
   import.meta.glob("../../../assets/parceiros/*.{png,jpg,jpeg,svg,webp,avif}", {
+    eager: true,
+    import: "default",
+  }),
+) as [string, string][];
+
+const actionLabsFromAssets = Object.entries(
+  import.meta.glob("../../../assets/workshops/*.{png,jpg,jpeg,svg,webp,avif}", {
     eager: true,
     import: "default",
   }),
@@ -43,7 +53,7 @@ function formatPartnerName(filePath: string) {
     .trim();
 }
 
-const partnerLogos: PartnerLogo[] = partnersFromAssets
+const partnerLogos: PartnerLogo[] = [...partnersFromAssets, ...actionLabsFromAssets]
   .map(([path, src]) => {
     const name = formatPartnerName(path);
     return {
@@ -53,6 +63,11 @@ const partnerLogos: PartnerLogo[] = partnersFromAssets
       url: partnerUrls[name],
     };
   })
+  .filter((partner) => {
+    const blockedNames = new Set(["visual", "ULSAltoAlentejo"]);
+    return !blockedNames.has(partner.name);
+  })
+  .filter((partner, index, arr) => arr.findIndex((p) => p.src === partner.src) === index)
   .sort((a, b) => a.name.localeCompare(b.name, "pt"));
 
 export function ParceirosSection() {
