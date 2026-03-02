@@ -28,6 +28,8 @@ import ulsAltoAlentejoLogo from "../../../assets/workshops/ULSAltoAlentejo.png";
 import hcLogo from "../../../assets/workshops/HC.png";
 import visualLogo from "../../../assets/workshops/visual.png";
 import daylifeLogo from "../../../assets/workshops/daylife.png";
+import politecnicoPortalegreLogo from "../../../assets/parceiros/5pportalegreversao_principal-01.png";
+import mtgLogo from "../../../assets/parceiros/MTG.png";
 const conferenceImage = programaImage;
 
 type SessionType = "keynote" | "panel" | "break" | "case" | "workshop" | "institutional" | "closing";
@@ -58,8 +60,11 @@ const day1Sessions: Session[] = [
     type: "workshop",
     duration: "7h",
     seats: "30 lugares",
-    formadores: "Alexandre Martins - CARE IPP, a designar - Promptly e Teresa Luciano - ULS São José",
+    formadores: "Alexandre Martins - CARE IPP, Daniel Antunes - MTG e Teresa Luciano - ULS São José",
     logos: [
+      { src: politecnicoPortalegreLogo, alt: "Politécnico de Portalegre", className: "h-8" },
+      { src: ulsAltoAlentejoLogo, alt: "ULS Alto Alentejo" },
+      { src: mtgLogo, alt: "MTG", className: "h-8" },
       { src: carelogo, alt: "CARE IPP" },
       { src: promptlyLogo, alt: "Promptly", className: "h-10" },
       { src: ulsSaoJoseLogo, alt: "ULS São José" },
@@ -126,15 +131,16 @@ const day2Sessions: Session[] = [
   },
   {
     time: "09:20",
-    title: "Transformação digital com Inteligência (Artificial)",
-    speaker: "Confirmado",
+    title: "Living lab e estratégia de Inovação da ULS Alto Alentejo",
+    speaker: "Grupo projeto living lab",
     type: "keynote",
     duration: "20 min",
   },
   {
     time: "09:40",
-    title: "Transformação Digital com IA",
-    speaker: "Henrique Martins - ISCTE",
+    title: "Transformação digital com Inteligência (Artificial)",
+    description: "Sistema de Apoio Inteligente à Tomada de Decisão no Serviço de Urgência",
+    speaker: "Ana Januário, Projeto HUMAI/ULS Almada-Seixal",
     type: "keynote",
     duration: "20 min",
   },
@@ -156,7 +162,7 @@ const day2Sessions: Session[] = [
     title: "Intervenções Inovadoras de Saúde Digital",
     moderacao: "Rafael Franco - SPMS*",
     bullets: [
-      { title: "Telessaúde - Caso de Estudo", speaker: "Neuza Reis e Ana Isabel, ULS São José" },
+      { title: "Tele saúde para serviços de Urgência", speaker: "Micaela Monteiro, CUF (a confirmar)" },
       { title: "Telemonitorização - Caso de Estudo", speaker: "Sílvio Almeida, ULS Entre Douro e Vouga" },
       { title: "Sistema de Apoio Inteligente à Tomada de Decisão", speaker: "Projeto HUMAI" },
     ],
@@ -166,7 +172,12 @@ const day2Sessions: Session[] = [
   {
     time: "12:00",
     title: "Como Inovar com Impacto na Saúde Pública?",
-    speaker: "Opening 15' - David Magboulé - Labtomarket, Cátia Sousa Pinto - SPMS*, Joana Seringa - ENSP e Rui Cunha - ASKLEPIC* (confirmado)",
+    speaker: "Opening 15' - David Magboulé - Labtomarket",
+    bullets: [
+      "Joana Seringa - ENSP",
+      "Rui Cunha - ASKLEPIC* (confirmado)",
+      "Rui Cortes - Lean Health",
+    ],
     description: "Utilização de dados, inovação e a saúde das pessoas.",
     moderacao: "André Gomes - ULS Alto Alentejo",
     type: "panel",
@@ -189,7 +200,7 @@ const day2Sessions: Session[] = [
   {
     time: "15:00",
     title: "Estratégias de Financiamento da Inovação em Territórios de Baixa Densidade",
-    speaker: "Carla Pereira - SINASE, João Transmontano - FINAO BIOTECH*",
+    speaker: "Carla Pereira - SINASE, João Transmontano - FINAO BIOTECH* (confirmado)",
     moderacao: "Ana Amélia Silva, ULS Alto Alentejo",
     type: "panel",
     duration: "30 min",
@@ -198,7 +209,7 @@ const day2Sessions: Session[] = [
     time: "15:30",
     title: "Inovação em Saúde Mental",
     speaker: "Estela Bastos - Psycare | CIIASM",
-    moderacao: "a designar - ULS Alto Alentejo",
+    moderacao: "Afonso Matos",
     type: "keynote",
     duration: "30 min",
   },
@@ -206,8 +217,11 @@ const day2Sessions: Session[] = [
     time: "16:00",
     title: "A Inovação como Trigger para a Investigação Clínica",
     bullets: [
-      "Hele Canhão - Secretária de Estado da Ciência e Inovação*",
-      "Adrian Llerena - Scientific Director of INUBE Institute for Biosanitary Research of Extremadura/SES Extremadura Health Service and UEx",
+      {
+        title: "Adrian Llerena",
+        speaker: "Opening 15' - Scientific Director of INUBE Institute for Biosanitary Research of Extremadura/SES Extremadura Health Service and UEx",
+      },
+      "Helena Canhão - Secretária de Estado da Ciência e Inovação*",
       "a confirmar - Politécnico de Portalegre",
       "Teresa Luciano - ULS São José",
       "Manuel Lopes - Universidade de Évora",

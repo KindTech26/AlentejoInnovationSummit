@@ -3,7 +3,7 @@ import {
   CalendarCheck,
   MapPin,
   Users,
-  ExternalLink,
+  AlertTriangle,
 } from "lucide-react";
 
 const commonIncludes = [
@@ -13,9 +13,15 @@ const commonIncludes = [
   "Certificado de participação",
   "Networking com profissionais e organizações",
   "Cocktail de encerramento",
+  "Preço Action Labs: 20 euros | Preço Summit: 20 euros",
 ];
 
 function RegistrationSection() {
+  const formEmbedUrl = (import.meta.env.VITE_REGISTRATION_FORM_EMBED_URL as
+    | string
+    | undefined) ??
+    "https://forms.office.com/Pages/ResponsePage.aspx?id=CEbIIh3wxUaAJGPMli5fUdPTaREkIeFMvMrrMJnedaxUN1NIWFRMNUwxS0ozT1dBNkhFOTA2RkVJNC4u&embed=true";
+
   return (
     <section
       id="inscricoes"
@@ -36,13 +42,12 @@ function RegistrationSection() {
             Evento exclusivo. Lugares limitados - reserve o seu lugar quanto
             antes.
           </p>
-          <div className="mt-4">
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/[0.08] px-3.5 py-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-              <span className="text-xs sm:text-sm text-primary">
-                Abertura das inscrições: 3 de Março
-              </span>
-            </div>
+          <div className="mt-4 inline-flex items-start gap-2 rounded-xl border border-amber-300/60 bg-amber-50 px-3.5 py-2 text-left">
+            <AlertTriangle className="h-4 w-4 text-amber-700 mt-0.5 flex-shrink-0" />
+            <span className="text-xs sm:text-sm text-amber-900">
+              Em caso de limitação de lugares, será considerada a ordem de
+              efetivação das inscrições.
+            </span>
           </div>
         </div>
 
@@ -63,21 +68,11 @@ function RegistrationSection() {
                 ))}
               </ul>
 
-              <div className="rounded-xl border border-white/15 bg-white/5 p-3.5">
-                <p className="text-sm text-white/90">
-                  O formulário de inscrição ficará disponível a 3 de Março nesta
-                  página.
+              <div className="rounded-xl border border-emerald-400/30 bg-emerald-500/10 p-3.5">
+                <p className="text-sm text-white/95">
+                  Formulário de inscrição disponível.
                 </p>
               </div>
-
-              <button
-                type="button"
-                disabled
-                className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white/70 px-4 py-3 text-sm text-[#10212d]/70 cursor-not-allowed"
-              >
-                Formulário disponível a 3 de Março
-                <ExternalLink className="w-4 h-4" />
-              </button>
             </aside>
 
             <div className="rounded-2xl border border-slate-200 bg-white p-2.5 sm:p-3">
@@ -91,20 +86,29 @@ function RegistrationSection() {
                 </span>
               </div>
               <div className="rounded-xl overflow-hidden border border-border">
-                <div className="h-[860px] bg-slate-50 flex items-center justify-center px-6 text-center">
-                  <div className="max-w-md">
-                    <p className="text-[11px] uppercase tracking-[0.14em] text-primary mb-3">
-                      Em preparação
-                    </p>
-                    <h4 className="text-xl text-foreground mb-2">
-                      Abertura das inscrições: 3 de Março
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Esta área manterá a mesma estrutura e o formulário será
-                      disponibilizado aqui assim que as inscrições abrirem.
-                    </p>
+                {formEmbedUrl ? (
+                  <iframe
+                    title="Formulário de inscrição"
+                    src={formEmbedUrl}
+                    className="h-[860px] w-full bg-white"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="h-[860px] bg-slate-50 flex items-center justify-center px-6 text-center">
+                    <div className="max-w-md">
+                      <p className="text-[11px] uppercase tracking-[0.14em] text-primary mb-3">
+                        Formulário
+                      </p>
+                      <h4 className="text-xl text-foreground mb-2">
+                        Configuração em falta
+                      </h4>
+                      <p className="text-sm text-muted-foreground">
+                        Defina <code>VITE_REGISTRATION_FORM_EMBED_URL</code> para
+                        apresentar o formulário nesta secção.
+                      </p>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           </div>
