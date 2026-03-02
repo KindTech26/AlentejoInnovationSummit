@@ -212,7 +212,7 @@ const day2Sessions: Session[] = [
       "Teresa Luciano - ULS São José",
       "Manuel Lopes - Universidade de Évora",
     ],
-    moderacao: "Érica Cardoso - ULS Alto Alentejo",
+    moderacao: "Erica Cardoso - ULS Alto Alentejo",
     type: "panel",
     duration: "60 min",
   },
