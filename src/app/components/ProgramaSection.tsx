@@ -141,7 +141,6 @@ const day2Sessions: Session[] = [
   {
     time: "09:40",
     title: "Transformação digital com Inteligência (Artificial)",
-    description: "Sistema de Apoio Inteligente à Tomada de Decisão no Serviço de Urgência",
     speaker: "Henrique Martins, ISCTE",
     type: "keynote",
     duration: "20 min",
@@ -216,7 +215,7 @@ const day2Sessions: Session[] = [
     time: "15:30",
     title: "Inovação em Saúde Mental",
     speaker: "Estela Bastos - Psycare | CIIASM",
-    moderacao: "Afonso Matos",
+    moderacao: "Afonso Matos, ULS Alto Alentejo",
     type: "keynote",
     duration: "30 min",
   },
