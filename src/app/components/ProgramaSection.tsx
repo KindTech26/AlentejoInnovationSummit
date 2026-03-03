@@ -60,7 +60,8 @@ const day1Sessions: Session[] = [
     type: "workshop",
     duration: "7h",
     seats: "30 lugares",
-    formadores: "Alexandre Martins - CARE IPP, Daniel Antunes - MTG e Teresa Luciano - ULS São José",
+    formadores:
+      "Alexandre Martins - CARE IPP, Daniela Antunes - MTG, Luís Machado - Promptly e Teresa Luciano - ULS São José",
     logos: [
       { src: politecnicoPortalegreLogo, alt: "Politécnico de Portalegre", className: "h-8" },
       { src: ulsAltoAlentejoLogo, alt: "ULS Alto Alentejo" },
@@ -78,7 +79,8 @@ const day1Sessions: Session[] = [
     type: "workshop",
     duration: "7h",
     seats: "40 lugares",
-    formadores: "Maurício Alves - ULS Alto Alentejo, Hélder Palheira - HC Healthcare e Rafael Pinto - Visual Thinking",
+    formadores:
+      "Maurício Alves - ULS Alto Alentejo, Hélder Palheira - HC Healthcare, Luís Machado - Promptly e Rafael Pinto - Visual Thinking",
     logos: [
       { src: ulsAltoAlentejoLogo, alt: "ULS Alto Alentejo" },
       { src: promptlyLogo, alt: "Promptly", className: "h-10" },
@@ -140,7 +142,7 @@ const day2Sessions: Session[] = [
     time: "09:40",
     title: "Transformação digital com Inteligência (Artificial)",
     description: "Sistema de Apoio Inteligente à Tomada de Decisão no Serviço de Urgência",
-    speaker: "Ana Januário, Projeto HUMAI/ULS Almada-Seixal",
+    speaker: "Henrique Martins, ISCTE",
     type: "keynote",
     duration: "20 min",
   },
@@ -162,9 +164,10 @@ const day2Sessions: Session[] = [
     title: "Intervenções Inovadoras de Saúde Digital",
     moderacao: "Rafael Franco - SPMS*",
     bullets: [
-      { title: "Tele saúde para serviços de Urgência", speaker: "Micaela Monteiro, CUF (a confirmar)" },
+      { title: "Telesaúde - Caso de Estudo", speaker: "Neuza Reis e Ana Isabel Santos, ULS São José" },
       { title: "Telemonitorização - Caso de Estudo", speaker: "Sílvio Almeida, ULS Entre Douro e Vouga" },
-      { title: "Sistema de Apoio Inteligente à Tomada de Decisão", speaker: "Projeto HUMAI" },
+      { title: "Sistema de Apoio Inteligente à Tomada de Decisão", speaker: "Ana Januário, ULS ULS Almada-Seixal - Projeto HUMAI" },
+      { title: "Tele saúde para serviços de Urgência", speaker: "Micaela Monteiro, CUF*" },
     ],
     type: "case",
     duration: "60 min",
@@ -175,7 +178,7 @@ const day2Sessions: Session[] = [
     speaker: "Opening 15' - David Magboulé - Labtomarket",
     bullets: [
       "Joana Seringa - ENSP",
-      "Rui Cunha - ASKLEPIC* (confirmado)",
+      "Rui Cunha - ASKLEPIC",
       "Rui Cortes - Lean Health",
     ],
     description: "Utilização de dados, inovação e a saúde das pessoas.",
@@ -200,7 +203,11 @@ const day2Sessions: Session[] = [
   {
     time: "15:00",
     title: "Estratégias de Financiamento da Inovação em Territórios de Baixa Densidade",
-    speaker: "Carla Pereira - SINASE, João Transmontano - FINAO BIOTECH* (confirmado)",
+    bullets: [
+      "Carla Pereira - SINASE",
+      "João Transmontano - FINAO BIOTECH",
+      "Tiago Teotónio Pereira - CCDR Alentejo",
+    ],
     moderacao: "Ana Amélia Silva, ULS Alto Alentejo",
     type: "panel",
     duration: "30 min",
@@ -236,7 +243,6 @@ const day2Sessions: Session[] = [
     moderacao: "André Neto de Oliveira - CNN Portugal*",
     bullets: [
       "José Paulo - CEO HOPECARE",
-      "a confirmar - Politécnico de Portalegre",
       "Miguel Lopes - ULS Alto Alentejo",
       "Ricardo Pinheiro - Presidente CCDR Alentejo",
     ],

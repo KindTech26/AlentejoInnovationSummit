@@ -69,9 +69,7 @@ function RegistrationSection() {
               </ul>
 
               <div className="rounded-xl border border-emerald-400/30 bg-emerald-500/10 p-3.5">
-                <p className="text-sm text-white/95">
-                  Disponivel ás 9:00h do dia 3 de março.
-                </p>
+                <p className="text-sm text-white/95">Inscrições abertas.</p>
               </div>
             </aside>
 
