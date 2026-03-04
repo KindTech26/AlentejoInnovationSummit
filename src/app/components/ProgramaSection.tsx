@@ -49,6 +49,7 @@ interface Session {
   logoSrc?: string;
   logoAlt?: string;
   logos?: { src: string; alt: string; className?: string }[];
+  availability?: "sold_out" | "limited";
 }
 
 const day1Sessions: Session[] = [
@@ -60,6 +61,7 @@ const day1Sessions: Session[] = [
     type: "workshop",
     duration: "7h",
     seats: "30 lugares",
+    availability: "limited",
     formadores:
       "Alexandre Martins - CARE IPP, Daniela Antunes - MTG, Luís Machado - Promptly e Teresa Luciano - ULS São José",
     logos: [
@@ -79,6 +81,7 @@ const day1Sessions: Session[] = [
     type: "workshop",
     duration: "7h",
     seats: "40 lugares",
+    availability: "sold_out",
     formadores:
       "Maurício Alves - ULS Alto Alentejo, Hélder Palheira - HC Healthcare, Luís Machado - Promptly e Rafael Pinto - Visual Thinking",
     logos: [
@@ -96,6 +99,7 @@ const day1Sessions: Session[] = [
     type: "workshop",
     duration: "7h",
     seats: "30 lugares",
+    availability: "limited",
     formadores: "Alberto Silva e Ana Oliveira - NOBOX",
     logos: [
       { src: noboxLogo, alt: "NOBOX", className: "h-3" },
@@ -109,6 +113,7 @@ const day1Sessions: Session[] = [
     type: "workshop",
     duration: "7h",
     seats: "20 lugares",
+    availability: "limited",
     formadores: "Cláudia Ribeiro - Daylife e Beatriz Mourato - ULS Alto Alentejo",
     logos: [
       { src: daylifeLogo, alt: "Daylife" },
@@ -372,6 +377,16 @@ function SessionCard({ session }: { session: Session }) {
             {session.seats && (
               <span className="hidden sm:inline-block text-[10px] px-2 py-0.5 rounded-full bg-blue-50 text-blue-600">
                 {session.seats}
+              </span>
+            )}
+            {session.availability === "sold_out" && (
+              <span className="inline-block text-[10px] px-2 py-0.5 rounded-full bg-rose-100 text-rose-700 font-semibold">
+                ESGOTADO
+              </span>
+            )}
+            {session.availability === "limited" && (
+              <span className="inline-block text-[10px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 font-medium">
+                Vagas limitadas
               </span>
             )}
           </div>
@@ -822,6 +837,9 @@ export function ProgramaSection() {
                       ? "20 Abril 2026  - Sessões práticas"
                       : "21 Abril 2026  - Centro de Ciência do Café, Campo Maior"}
                   </p>
+                  <span className="mt-2 inline-block text-[10px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 font-medium">
+                    Vagas limitadas
+                  </span>
                 </div>
               </div>
 
@@ -904,6 +922,19 @@ export function ProgramaSection() {
               </div>
             ) : (
               <div>
+                <div className="bg-card border border-border rounded-2xl p-6 mb-3">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <h3 className="text-foreground text-lg">Summit - Terça, 21 Abril</h3>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        Sessões plenárias, painéis e casos de estudo com convidados nacionais e internacionais.
+                      </p>
+                    </div>
+                    <span className="inline-block text-[10px] px-2 py-1 rounded-full bg-amber-100 text-amber-700 font-medium h-fit">
+                      Vagas limitadas
+                    </span>
+                  </div>
+                </div>
                 <div className="space-y-2">
                   {sessions.map((session, index) => (
                     <SessionCard key={index} session={session} />
