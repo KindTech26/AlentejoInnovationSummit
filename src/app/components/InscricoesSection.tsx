@@ -68,8 +68,8 @@ function RegistrationSection() {
                 ))}
               </ul>
 
-              <div className="rounded-xl border border-emerald-400/30 bg-emerald-500/10 p-3.5">
-                <p className="text-sm text-white/95">Inscrições abertas.</p>
+              <div className="rounded-xl border border-rose-400/40 bg-rose-500/20 p-3.5">
+                <p className="text-sm text-rose-100 font-semibold">Esgotado.</p>
               </div>
             </aside>
 

@@ -61,15 +61,14 @@ const day1Sessions: Session[] = [
     type: "workshop",
     duration: "7h",
     seats: "30 lugares",
-    availability: "limited",
+    availability: "sold_out",
     formadores:
-      "Alexandre Martins - CARE IPP, Daniela Antunes - MTG, Luís Machado - Promptly e Teresa Luciano - ULS São José",
+      "Alexandre Martins - CARE IPP, Daniela Antunes - MTG e Teresa Luciano - ULS São José",
     logos: [
       { src: politecnicoPortalegreLogo, alt: "Politécnico de Portalegre", className: "h-8" },
       { src: ulsAltoAlentejoLogo, alt: "ULS Alto Alentejo" },
       { src: mtgLogo, alt: "MTG", className: "h-8" },
       { src: carelogo, alt: "CARE IPP" },
-      { src: promptlyLogo, alt: "Promptly", className: "h-10" },
       { src: ulsSaoJoseLogo, alt: "ULS São José" },
     ],
   },
@@ -99,7 +98,7 @@ const day1Sessions: Session[] = [
     type: "workshop",
     duration: "7h",
     seats: "30 lugares",
-    availability: "limited",
+    availability: "sold_out",
     formadores: "Alberto Silva e Ana Oliveira - NOBOX",
     logos: [
       { src: noboxLogo, alt: "NOBOX", className: "h-3" },
@@ -113,7 +112,7 @@ const day1Sessions: Session[] = [
     type: "workshop",
     duration: "7h",
     seats: "20 lugares",
-    availability: "limited",
+    availability: "sold_out",
     formadores: "Cláudia Ribeiro - Daylife e Beatriz Mourato - ULS Alto Alentejo",
     logos: [
       { src: daylifeLogo, alt: "Daylife" },
@@ -381,7 +380,7 @@ function SessionCard({ session }: { session: Session }) {
             )}
             {session.availability === "sold_out" && (
               <span className="inline-block text-[10px] px-2 py-0.5 rounded-full bg-rose-100 text-rose-700 font-semibold">
-                ESGOTADO
+                Inscrições esgotadas
               </span>
             )}
             {session.availability === "limited" && (
@@ -837,8 +836,10 @@ export function ProgramaSection() {
                       ? "20 Abril 2026  - Sessões práticas"
                       : "21 Abril 2026  - Centro de Ciência do Café, Campo Maior"}
                   </p>
-                  <span className="mt-2 inline-block text-[10px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 font-medium">
-                    Vagas limitadas
+                  <span
+                    className={`mt-2 inline-block text-[10px] px-2 py-0.5 rounded-full font-medium ${activeDay === 1 ? "bg-rose-100 text-rose-700" : "bg-amber-100 text-amber-700"}`}
+                  >
+                    {activeDay === 1 ? "Inscrições esgotadas" : "Vagas limitadas"}
                   </span>
                 </div>
               </div>
@@ -878,7 +879,7 @@ export function ProgramaSection() {
                 }}
                 className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-secondary text-secondary-foreground rounded-xl hover:bg-accent transition-all cursor-pointer text-sm"
               >
-                Inscreva-se
+                {activeDay === 1 ? "Esgotado" : "Inscreva-se"}
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>

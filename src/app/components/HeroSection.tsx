@@ -22,7 +22,7 @@ export function HeroSection() {
 
   const eventUrl = "https://ulsaltoalentejoeventos.pt";
   const eventTitle = "Alto Alentejo Health Innovation Summit 2026";
-  const shareText = "Alto Alentejo Health Innovation Summit 2026 — 20 e 21 de Abril, Campo Maior. Inscrições abertas!";
+  const shareText = "Alto Alentejo Health Innovation Summit 2026 — 20 e 21 de Abril, Campo Maior. Esgotado!";
 
   const shareToFacebook = () => {
     window.open(
