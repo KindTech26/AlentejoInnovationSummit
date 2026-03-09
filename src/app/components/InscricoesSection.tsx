@@ -69,7 +69,7 @@ function RegistrationSection() {
               </ul>
 
               <div className="rounded-xl border border-rose-400/40 bg-rose-500/20 p-3.5">
-                <p className="text-sm text-rose-100 font-semibold">Esgotado.</p>
+                <p className="text-sm text-rose-100 font-semibold">Vagas esgotadas - estamos a trabalhar para conseguir mais capacidade e abrir um segundo momento de inscrição.</p>
               </div>
             </aside>
 

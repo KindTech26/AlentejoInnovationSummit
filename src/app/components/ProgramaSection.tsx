@@ -235,6 +235,7 @@ const day2Sessions: Session[] = [
       "a confirmar - Politécnico de Portalegre",
       "Teresa Luciano - ULS São José",
       "Manuel Lopes - Universidade de Évora",
+      "Tiago Taveira Gomes - MTG Research",
     ],
     moderacao: "Erica Cardoso - ULS Alto Alentejo",
     type: "panel",
