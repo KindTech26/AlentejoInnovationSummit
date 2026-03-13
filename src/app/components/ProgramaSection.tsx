@@ -231,7 +231,6 @@ const day2Sessions: Session[] = [
         title: "Adrian Llerena",
         speaker: "Opening 15' - Scientific Director of INUBE Institute for Biosanitary Research of Extremadura/SES Extremadura Health Service and UEx",
       },
-      "Helena Canhão - Secretária de Estado da Ciência e Inovação*",
       "a confirmar - Politécnico de Portalegre",
       "Teresa Luciano - ULS São José",
       "Manuel Lopes - Universidade de Évora",
