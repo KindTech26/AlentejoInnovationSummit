@@ -248,6 +248,7 @@ const day2Sessions: Session[] = [
       "José Paulo - CEO HOPECARE",
       "Miguel Lopes - ULS Alto Alentejo",
       "Ricardo Pinheiro - Presidente CCDR Alentejo",
+      "Diogo Reis - Glintt",
     ],
     type: "panel",
     duration: "60 min",
