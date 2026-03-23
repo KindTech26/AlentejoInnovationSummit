@@ -82,7 +82,7 @@ const day1Sessions: Session[] = [
     seats: "40 lugares",
     availability: "sold_out",
     formadores:
-      "Maurício Alves - ULS Alto Alentejo, Hélder Palheira - HC Healthcare, Luís Machado - Promptly e Rafael Pinto - Visual Thinking",
+      "Maurício Alves - ULS Alto Alentejo, Hélder Palheira - HC Healthcare, Luís Machado - Promptly, Rafael Pinto - Visual Thinking e Joana Seringa - ENSP",
     logos: [
       { src: ulsAltoAlentejoLogo, alt: "ULS Alto Alentejo" },
       { src: promptlyLogo, alt: "Promptly", className: "h-10" },
@@ -198,7 +198,10 @@ const day2Sessions: Session[] = [
   {
     time: "14:30",
     title: "Inovação Tecnológica - Cirurgia Digital e Robótica",
-    speaker: "Jorge Carvalho - ULS Santo António",
+    bullets: [
+      "Jorge Carvalho - ULS Santo António",
+      "Agustín Catan - Zimmer Bionet",
+    ],
     moderacao: "Guilherme Fialho - ULS Alto Alentejo",
     type: "keynote",
     duration: "30 min",
@@ -242,7 +245,7 @@ const day2Sessions: Session[] = [
   {
     time: "17:00",
     title: "Dimensões do ecossistema de inovação em saúde",
-    moderacao: "André Neto de Oliveira - CNN Portugal*",
+    moderacao: "A designar",
     bullets: [
       "José Paulo - CEO HOPECARE",
       "Miguel Lopes - ULS Alto Alentejo",
