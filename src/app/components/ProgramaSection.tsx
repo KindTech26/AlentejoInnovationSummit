@@ -30,6 +30,8 @@ import visualLogo from "../../../assets/workshops/visual.png";
 import daylifeLogo from "../../../assets/workshops/daylife.png";
 import politecnicoPortalegreLogo from "../../../assets/parceiros/5pportalegreversao_principal-01.png";
 import mtgLogo from "../../../assets/parceiros/MTG.png";
+import gemaLogo from "../../../assets/parceiros/logo_gema_Black.png";
+import enspLogo from "../../../assets/parceiros/ENSP.png";
 const conferenceImage = programaImage;
 
 type SessionType = "keynote" | "panel" | "break" | "case" | "workshop" | "institutional" | "closing";
@@ -88,6 +90,7 @@ const day1Sessions: Session[] = [
       { src: promptlyLogo, alt: "Promptly", className: "h-10" },
       { src: hcLogo, alt: "HC Healthcare", className: "h-8" },
       { src: visualLogo, alt: "Visual Thinking", className: "h-12" },
+      { src: enspLogo, alt: "ENSP", className: "h-8" },
     ],
   },
   {
@@ -113,8 +116,9 @@ const day1Sessions: Session[] = [
     duration: "7h",
     seats: "20 lugares",
     availability: "sold_out",
-    formadores: "Cláudia Ribeiro - Daylife e Beatriz Mourato - ULS Alto Alentejo",
+    formadores: "Luís Agrello - GEMA Digital, Cláudia Ribeiro - Daylife e Beatriz Mourato - ULS Alto Alentejo",
     logos: [
+      { src: gemaLogo, alt: "GEMA Digital", className: "h-8" },
       { src: daylifeLogo, alt: "Daylife" },
       { src: ulsAltoAlentejoLogo, alt: "ULS Alto Alentejo" },
     ],
