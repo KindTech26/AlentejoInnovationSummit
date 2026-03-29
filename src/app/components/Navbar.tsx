@@ -6,7 +6,6 @@ import tituloEventoPreto from "../../../assets/tituloeventopreto.png";
 const navLinks = [
   { id: "sobre", label: "O Evento" },
   { id: "programa", label: "Programa" },
-  { id: "inscricoes", label: "Inscrições" },
   { id: "parceiros", label: "Parceiros" },
   { id: "innovation-hub", label: "Innovation Hub" },
 ];
@@ -101,17 +100,6 @@ export function Navbar() {
           {/* CTA + Mobile */}
           <div className="flex items-center gap-3">
             <button
-              onClick={() => scrollTo("inscricoes")}
-              className={`hidden md:inline-flex px-5 py-2 rounded-lg text-sm transition-all cursor-pointer ${
-                isScrolled
-                  ? "bg-primary text-primary-foreground hover:opacity-90"
-                  : "bg-white/10 backdrop-blur-sm text-white border border-white/15 hover:bg-white/15"
-              }`}
-            >
-              Inscreva-se
-            </button>
-
-            <button
               className={`md:hidden p-2 rounded-lg cursor-pointer ${
                 isScrolled ? "text-foreground" : "text-white"
               } ${isScrolled ? "hidden" : ""}`}
@@ -133,7 +121,6 @@ export function Navbar() {
           <div className="site-container flex items-center justify-center py-2">
             {[
               { id: "programa", label: "Programa" },
-              { id: "inscricoes", label: "Inscrições" },
               { id: "parceiros", label: "Parceiros" },
             ].map((link, i) => (
               <div key={link.id} className="flex items-center">
@@ -171,14 +158,6 @@ export function Navbar() {
                 {link.label}
               </button>
             ))}
-            <div className="pt-2">
-              <button
-                onClick={() => scrollTo("inscricoes")}
-                className="w-full px-4 py-3 bg-primary text-primary-foreground rounded-xl text-sm cursor-pointer hover:opacity-90 transition-all"
-              >
-                Inscreva-se
-              </button>
-            </div>
           </div>
         </div>
       )}

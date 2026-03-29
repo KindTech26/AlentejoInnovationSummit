@@ -136,16 +136,6 @@ export function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
-            <button
-              onClick={() => {
-                const el = document.getElementById("inscricoes");
-                if (el) el.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="px-8 py-3.5 bg-[#0e7c6b] text-white rounded-full hover:bg-[#0a6358] transition-all cursor-pointer text-sm tracking-wide shadow-lg shadow-[#0e7c6b]/25"
-            >
-              Inscreva-se
-            </button>
-
             <div className="flex items-center gap-2 sm:contents">
               <button
                 onClick={() => {

@@ -2,7 +2,6 @@ import { Navbar } from "./components/Navbar";
 import { HeroSection } from "./components/HeroSection";
 import { AboutSection } from "./components/AboutSection";
 import { ProgramaSection } from "./components/ProgramaSection";
-import { InscricoesSection } from "./components/InscricoesSection";
 import { ParceirosSection } from "./components/ParceirosSection";
 import { InnovationHubSection } from "./components/InnovationHubSection";
 import { Footer } from "./components/Footer";
@@ -19,8 +18,7 @@ export default function App() {
         <HeroSection />
         <AboutSection />
         <ProgramaSection />
-        <InscricoesSection />
-        <ParceirosSection />
+<ParceirosSection />
         <InnovationHubSection />
       </main>
       <Footer />
