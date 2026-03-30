@@ -392,7 +392,7 @@ function SessionCard({ session }: { session: Session }) {
             )}
             {session.availability === "limited" && (
               <span className="inline-block text-[10px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 font-medium">
-                Vagas limitadas
+                Vagas esgotadas
               </span>
             )}
           </div>
@@ -846,7 +846,7 @@ export function ProgramaSection() {
                   <span
                     className={`mt-2 inline-block text-[10px] px-2 py-0.5 rounded-full font-medium ${activeDay === 1 ? "bg-rose-100 text-rose-700" : "bg-amber-100 text-amber-700"}`}
                   >
-                    {activeDay === 1 ? "Inscrições esgotadas" : "Vagas limitadas"}
+                    {activeDay === 1 ? "Inscrições esgotadas" : "Vagas esgotadas"}
                   </span>
                 </div>
               </div>
@@ -939,7 +939,7 @@ export function ProgramaSection() {
                       </p>
                     </div>
                     <span className="inline-block text-[10px] px-2 py-1 rounded-full bg-amber-100 text-amber-700 font-medium h-fit">
-                      Vagas limitadas
+                      Vagas esgotadas
                     </span>
                   </div>
                 </div>

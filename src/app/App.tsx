@@ -4,6 +4,7 @@ import { AboutSection } from "./components/AboutSection";
 import { ProgramaSection } from "./components/ProgramaSection";
 import { ParceirosSection } from "./components/ParceirosSection";
 import { InnovationHubSection } from "./components/InnovationHubSection";
+import { InscricoesSection } from "./components/InscricoesSection";
 import { Footer } from "./components/Footer";
 import { BackToTop } from "./components/BackToTop";
 
@@ -18,6 +19,7 @@ export default function App() {
         <HeroSection />
         <AboutSection />
         <ProgramaSection />
+        <InscricoesSection />
 <ParceirosSection />
         <InnovationHubSection />
       </main>
