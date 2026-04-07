@@ -111,12 +111,12 @@ const day1Sessions: Session[] = [
     time: "09:00",
     title: "Técnicas Avançadas Point-of-Care",
     description:
-      "Sessões práticas: Fitobiomodulação por Luz Azul, Oxigenoterapia tópica contínua, laser e ecografia",
+      "Sessões práticas: Fitobiomodulação por Luz Azul, Oxigenoterapia tópica contínua, laser e ecografia, VR/AR/Holografia em cuidados de saúde.",
     type: "workshop",
     duration: "7h",
     seats: "20 lugares",
     availability: "sold_out",
-    formadores: "Luís Agrello - GEMA Digital, Cláudia Ribeiro - Daylife e Beatriz Mourato - ULS Alto Alentejo",
+    formadores: "Luís Agrellos - GEMA Digital, Cláudia Ribeiro - Daylife e Beatriz Mourato - ULS Alto Alentejo",
     logos: [
       { src: gemaLogo, alt: "GEMA Digital", className: "h-8" },
       { src: daylifeLogo, alt: "Daylife" },
