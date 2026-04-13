@@ -3,7 +3,6 @@ import {
   CalendarCheck,
   MapPin,
   Users,
-  AlertTriangle,
 } from "lucide-react";
 
 const commonIncludes = [
@@ -29,12 +28,6 @@ function RegistrationSection() {
           <h2 className="text-3xl md:text-4xl text-foreground mb-5">
             Inscrições
           </h2>
-          <div className="mt-4 inline-flex items-start gap-2 rounded-xl border border-rose-300/60 bg-rose-50 px-3.5 py-2 text-left">
-            <AlertTriangle className="h-4 w-4 text-rose-700 mt-0.5 flex-shrink-0" />
-            <span className="text-xs sm:text-sm text-rose-900 font-semibold">
-              Vagas esgotadas — estamos a trabalhar para conseguir mais capacidade e abrir um segundo momento de inscrição.
-            </span>
-          </div>
         </div>
 
         <div className="rounded-3xl border border-primary/15 bg-gradient-to-b from-white to-slate-50/70 p-4 sm:p-5 shadow-[0_18px_50px_rgba(15,23,42,0.08)]">

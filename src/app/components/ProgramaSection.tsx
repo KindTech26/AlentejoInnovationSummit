@@ -111,7 +111,7 @@ const day1Sessions: Session[] = [
     time: "09:00",
     title: "Técnicas Avançadas Point-of-Care",
     description:
-      "Sessões práticas: Fitobiomodulação por Luz Azul, Oxigenoterapia tópica contínua, laser e ecografia, VR/AR/Holografia em cuidados de saúde.",
+      "Sessões práticas: Fotobiomodulação por Luz Azul, Oxigenoterapia tópica contínua, laser e ecografia, VR/AR/Holografia em cuidados de saúde.",
     type: "workshop",
     duration: "7h",
     seats: "20 lugares",
@@ -249,12 +249,10 @@ const day2Sessions: Session[] = [
   {
     time: "17:00",
     title: "Dimensões do ecossistema de inovação em saúde",
-    moderacao: "A designar",
+    moderacao: "Joana Seringa",
     bullets: [
-      "José Paulo - CEO HOPECARE",
-      "Miguel Lopes - ULS Alto Alentejo",
-      "Ricardo Pinheiro - Presidente CCDR Alentejo",
-      "Diogo Reis - Glintt",
+      "Sérgio Durão - Salesforce",
+      "Hugo Soares - Devscope",
     ],
     type: "panel",
     duration: "60 min",
