@@ -249,21 +249,18 @@ const day2Sessions: Session[] = [
   {
     time: "17:00",
     title: "Dimensões do ecossistema de inovação em saúde",
-    moderacao: "Joana Seringa",
+    moderacao: "Joana Seringa, ENSP",
     bullets: [
-      "Sérgio Durão - Salesforce",
-      "Hugo Soares - Devscope",
+      "Ricardo Pinheiro, Presidente da CCDR Alentejo",
+      "Miguel Lopes, Presidente da ULS Alto Alentejo",
+      "José Paulo, CEO HOPECARE",
+      "Diogo Reis, GLINTT",
+      "Sérgio Durão, Salesforce",
+      "Hugo Soares, Devscope",
     ],
     type: "panel",
     duration: "60 min",
     featured: true,
-  },
-  {
-    time: "18:00",
-    title: "A Inovação na Saúde como Agente de Mudança das Organizações e Políticas de Saúde",
-    speaker: "Ana Paula Martins - Ministra da Saúde*",
-    type: "institutional",
-    duration: "20 min",
   },
   {
     time: "18:30",
