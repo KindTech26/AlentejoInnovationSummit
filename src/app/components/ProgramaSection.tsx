@@ -187,6 +187,7 @@ const day2Sessions: Session[] = [
       "Joana Seringa - ENSP",
       "Rui Cunha - ASKLEPIC",
       "Rui Cortes - Lean Health",
+      "Cátia Sousa Pinto - SPMS",
     ],
     description: "Utilização de dados, inovação e a saúde das pessoas.",
     moderacao: "André Gomes - ULS Alto Alentejo",
@@ -214,7 +215,7 @@ const day2Sessions: Session[] = [
     time: "15:00",
     title: "Estratégias de Financiamento da Inovação em Territórios de Baixa Densidade",
     bullets: [
-      "Carla Pereira - SINASE",
+      "Carlos Ferreira - SINASE",
       "João Transmontano - FINAO BIOTECH",
       "Tiago Teotónio Pereira - CCDR Alentejo",
     ],
@@ -224,14 +225,6 @@ const day2Sessions: Session[] = [
   },
   {
     time: "15:30",
-    title: "Inovação em Saúde Mental",
-    speaker: "Estela Bastos - Psycare | CIIASM",
-    moderacao: "Afonso Matos, ULS Alto Alentejo",
-    type: "keynote",
-    duration: "30 min",
-  },
-  {
-    time: "16:00",
     title: "A Inovação como Trigger para a Investigação Clínica",
     bullets: [
       {
@@ -241,10 +234,19 @@ const day2Sessions: Session[] = [
       "Teresa Luciano - ULS São José",
       "Manuel Lopes - Universidade de Évora",
       "Tiago Taveira Gomes - MTG Research",
+      "Jacinto Gomes - Politécnico de Portalegre",
     ],
     moderacao: "Erica Cardoso - ULS Alto Alentejo",
     type: "panel",
     duration: "60 min",
+  },
+  {
+    time: "16:30",
+    title: "Inovação em Saúde Mental",
+    speaker: "Estela Bastos - Psycare | CIIASM",
+    moderacao: "Afonso Matos, ULS Alto Alentejo",
+    type: "keynote",
+    duration: "30 min",
   },
   {
     time: "17:00",
