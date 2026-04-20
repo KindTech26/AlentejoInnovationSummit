@@ -217,7 +217,7 @@ const day2Sessions: Session[] = [
     bullets: [
       "Carlos Ferreira - SINASE",
       "João Transmontano - FINAO BIOTECH",
-      "Tiago Teotónio Pereira - CCDR Alentejo",
+      "Tiago Teotónio Pereira - Alentejo 2030",
     ],
     moderacao: "Ana Amélia Silva, ULS Alto Alentejo",
     type: "panel",
